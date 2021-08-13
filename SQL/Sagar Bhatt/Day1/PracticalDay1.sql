@@ -27,7 +27,7 @@ CREATE TABLE JobHistory(
 
 INSERT INTO JobHistory(StartDate, End_Eate, Job_Id, Department_Id) VALUES('1-1-1998', '1-9-1998', 1, 1)
 
-SELECT EmployeeId,StartDate, End_Eate, Job_Id, Department_Id from JobHistory
+SELECT EmployeeId, FORMAT(StartDate, 'dd-MM-yyyy'), DATENAME(dd, End_Eate) + SPACE(1) + DATENAME(MM, End_Eate) + DATENAME(yyyy, End_Eate), Job_Id, Department_Id from JobHistory
 
 --Practical 3
 

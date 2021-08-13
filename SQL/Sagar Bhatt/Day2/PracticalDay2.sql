@@ -122,7 +122,10 @@ SELECT * FROM Employees ORDER BY FirstName DESC
 SELECT EmployeeID, FirstName + LastName 'Names', Salary FROM Employees ORDER BY Salary
 
 --13-Select TOP 2 salary from employee table
-SELECT TOP 2 Salary FROM Employees
-
-
+SELECT Salary 
+FROM (SELECT  DENSE_RANK() OVER(ORDER BY Salary DESC) [DENSE_RANK], Salary 
+FROM Employees) tmp
+WHERE [DENSE_RANK] <= 2
+GROUP BY Salary
+ORDER BY Salary DESC
 
