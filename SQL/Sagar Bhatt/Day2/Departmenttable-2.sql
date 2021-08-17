@@ -270,3 +270,37 @@ INSERT INTO  JobHistory VALUES
 ('200', '1987-09-17', '1993-06-17', 'AD_ASST', '90'),
 ('176', '1998-03-24', '1998-12-31', 'SA_REP', '80'),
 ('176', '1999-01-01', '1999-12-31', 'SA_MAN', '80')
+
+CREATE TABLE Incentives(
+      Incentive_ID INT CONSTRAINT PK_Incentives PRIMARY KEY IDENTITY(1,1)
+    , Employee_Ref_Id DECIMAL(6) NOT NULL
+    , Incentive_Date DATE
+    , Incentive_Amount MONEY
+    , CONSTRAINT FK_Employees_Incentives FOREIGN KEY (Employee_Ref_Id) REFERENCES Employees(EmployeeID) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+DROP TABLE Incentives
+SELECT * FROM Incentives
+
+-- Inserting Values
+INSERT INTO Incentives
+        VALUES(105,'2021-08-17',4000)
+    ,    (110,'2021-08-17',2000)
+    ,    (112,'2021-08-17',8000)
+    ,    (114,'2021-08-17',1000)
+    ,    (118,'2021-08-17',3000)
+    ,    (123,'2021-08-17',2500)
+    ,    (127,'2021-08-17',5000)
+    ,    (132,'2021-08-17',4500)
+    ,    (138,'2021-08-17',7000)
+    ,    (140,'2021-08-17',6000)
+    ,    (155,'2021-08-17',5500)
+    ,    (157,'2021-08-17',1000)
+    ,    (159,'2021-08-17',9000)
+    ,    (160,'2021-08-17',4000)
+    ,    (165,'2021-08-17',3000)
+    ,    (169,'2021-08-17',1414)
+    ,    (170,'2021-08-17',2500)
+    ,    (198,'2021-08-17',5000)
+	,    (205,'2021-08-17',5000)
+    ,    (206,'2021-08-17',10000)

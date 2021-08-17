@@ -8,7 +8,15 @@ FROM Employees
 
 SELECT DENSE_RANK()
 OVER(ORDER BY Salary DESC) [DenseRank], *
-FROM Employees 
+FROM Employees
+
+SELECT ROW_NUMBER()
+OVER(ORDER BY Salary DESC) [ROW_NUMBER], *
+FROM Employees
+
+SELECT NTILE(10)
+OVER(ORDER BY Salary DESC) [NTILE], *
+FROM Employees
 
 --2-Select 4th Highest salary from employee table using ranking function
 SELECT Salary FROM (SELECT DENSE_RANK()
