@@ -37,3 +37,10 @@ RIGHT JOIN Employees Emp
 ON Emp.ManagerID = Mgr.EmployeeID
 ORDER BY Emp.EmployeeID
 
+--5-Select first_name, incentive amount from employee and incentives table for all employees even if they didn’t get incentives and 
+--set incentive amount as 0 for those employees who didn’t get incentives.
+SELECT Emp.FirstName
+	, ISNULL(Inc.Incentive_Amount, 0)
+FROM Employees Emp
+LEFT JOIN Incentives Inc
+ON Emp.EmployeeID = Inc.Employee_Ref_ID
