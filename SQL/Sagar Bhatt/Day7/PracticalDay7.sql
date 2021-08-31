@@ -182,10 +182,11 @@ WITH CTE_Employee_Incentive_Incentive_Amount(FirstName, Incentive_Amount)
 AS
 (
 	SELECT E.FirstName
-		, CASE 
-		WHEN I.Incentive_Amount IS NULL THEN 0
-		ELSE I.Incentive_Amount
-		END
+		--, CASE 
+		--WHEN I.Incentive_Amount IS NULL THEN 0
+		--ELSE I.Incentive_Amount
+		--END
+		, ISNULL(I.Incentive_Amount, 0)
 	FROM Employees E
 	FULL JOIN Incentives	I
 	ON E.EmployeeID = I.Employee_Ref_Id
