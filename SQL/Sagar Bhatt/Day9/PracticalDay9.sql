@@ -35,6 +35,10 @@ CREATE TABLE Students(
 	, CONSTRAINT PK_Students_StudentID PRIMARY KEY(StudentID)
 )
 
+ALTER TABLE Students
+ALTER COLUMN Name VARCHAR(30) NULL
+
+--JSON Sting
 DECLARE @jsonStudents NVARCHAR(MAX)
 SET @jsonStudents = N'[
 	{
@@ -71,12 +75,20 @@ SET @jsonStudents = N'[
 		"City":"Ahmedabad",
 		"DOB":"1998-03-02",
 		"Standard":10
+	},
+		{
+		"Name":null,
+		"Address":"Sarangpur",
+		"City":"Ahmedabad",
+		"DOB":"1998-03-02",
+		"Standard":10
 	}
 ]'
 
+--Check if string is valid JSON or not
 IF (ISJSON(@jsonStudents) > 0)
 BEGIN
-	--INSERT INTO Students
+	INSERT INTO Students
 	SELECT *
 	FROM OPENJSON(@jsonStudents)
 	WITH
@@ -91,6 +103,20 @@ END
 ELSE
 	PRINT 'String doesn''t contain valid JSON.'
 
+--Convert into JSON Format
 SELECT *
 FROM Students
 FOR JSON AUTO
+
+--Remove Square Brackets from JSON
+SELECT *
+FROM Students
+FOR JSON AUTO, WITHOUT_ARRAY_WRAPPER
+
+SELECT *
+FROM Students
+FOR JSON AUTO, ROOT
+
+SELECT *
+FROM Students
+FOR JSON AUTO, INCLUDE_NULL_VALUES
