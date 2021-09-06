@@ -49,8 +49,6 @@ SELECT DATEPART(yyyy,GETDATE()) AS 'Year'
 --Sample days : 730677
 --Output : 2000-07-11
 
-
-
 --11. Write a query to get the first name and hire date from employees table where hire date between '1987-06-01' and '1987-07-30' 
 
 SELECT FirstName

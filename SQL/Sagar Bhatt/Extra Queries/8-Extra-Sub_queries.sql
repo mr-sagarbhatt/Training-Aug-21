@@ -1,4 +1,4 @@
-USE DB_ExtraQueries
+USE Day2
 
 SELECT *
 FROM Employees

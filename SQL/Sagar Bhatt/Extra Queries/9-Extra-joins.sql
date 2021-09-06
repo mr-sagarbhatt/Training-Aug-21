@@ -1,4 +1,4 @@
-USE DB_ExtraQueries
+USE Day2
 
 --1. Write a query to find the addresses (location_id, street_address, city, state_province, country_name) of all the departments. 
 
@@ -76,8 +76,6 @@ FROM JobHistory AS JH
 INNER JOIN Employees AS E
 	ON JH.EmployeeID = E.EmployeeID
 WHERE JH.DepartmentID = 90 
-
-
 
 --8. Write a query to display the department ID, department name and manager first name. 
 
