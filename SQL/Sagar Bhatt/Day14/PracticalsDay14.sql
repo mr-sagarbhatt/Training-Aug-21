@@ -1,49 +1,83 @@
-CREATE DATABASE Day14
---DROP DATABASE Day14
-
 USE Day14
-
-CREATE TABLE Student(
-	StudentID INT IDENTITY(1,1)
-    , StudentName NVARCHAR(30) 
-    , TotalFees DECIMAL(9,2) CONSTRAINT DFStudentTotalFees DEFAULT 0
-    , RemainingAmt DECIMAL(9,2) CONSTRAINT DFStudentRemainingAmt DEFAULT 0
-    , CONSTRAINT PKStudentStudentID PRIMARY KEY(StudentID)
-)
-
-CREATE TABLE Course(
-	CourseID INT IDENTITY(1,1)
-    , CourseName NVARCHAR(30)
-    , TotalFees DECIMAL(9,2) CONSTRAINT DFCourseTotalFees DEFAULT 0
-    , CONSTRAINT PKCourseCourseID PRIMARY KEY(CourseID)
-)
-
-CREATE TABLE CourseEnrolled(
-	StudentID INT 
-    , CourseID INT
-    , CONSTRAINT PKCourseEnrolled PRIMARY KEY(StudentID,CourseID)
-    , CONSTRAINT FKCourseEnrolledStudent FOREIGN KEY(StudentID) REFERENCES Student(StudentID)
-    , CONSTRAINT FKCourseEnrolledCourse FOREIGN KEY(CourseID) REFERENCES Course(CourseID)
-)
-
-CREATE TABLE FeePayment(
-	StudentID INT
-    , AmountPaid DECIMAL(9,2) CONSTRAINT DFFeePaymentAmountPaid DEFAULT 0
-    , DateofPayment DATE CONSTRAINT DFFeePaymentDoP DEFAULT GETDATE()
-    , CONSTRAINT PKFeePaymentStudentID PRIMARY KEY(StudentID)
-)
-
---Data Insert
-INSERT INTO Student(StudentName)
-	VALUES ('Sagar Bhatt')
-	, ('Harsh Bhatt')
-    , ('Meet Shah')
-    , ('Vinod Patel')
-	, ('Niraj Surati')
-
-INSERT INTO Course
-	VALUES ('MCA', 200000)
-    , ('BCA', 100000)
-    , ('Bcom', 100000)
-    , ('Mcom', 200000)
 GO
+
+SELECT * FROM Student
+SELECT * FROM Course
+SELECT * FROM CourseEnrolled
+SELECT * FROM FeePayment
+GO
+
+--1-Create an insert trigger on CourseEnrolled Table, record should be updated in TotalFees Field on the Student table for the respective student.
+CREATE TRIGGER dbo.trgInsertCourseEnrolled
+ON CourseEnrolled
+FOR INSERT 
+AS
+BEGIN
+    DECLARE @Sid INT, @Cid INT, @TotalSid DECIMAL(9,2), @TotalCid DECIMAL(9,2), @RemainSid DECIMAL(9,2)
+
+    SELECT @Sid= StudentID, @Cid= CourseID 
+    FROM inserted
+
+    SELECT @TotalSid = TotalFees, @RemainSid = RemainingAmt
+    FROM Student
+    WHERE StudentID = @Sid
+
+    SELECT @TotalCid = TotalFees
+    FROM Course
+    WHERE CourseID = @Cid
+
+    SET @TotalSid = @TotalSid + @TotalCid
+    SET @RemainSid = @RemainSid + @TotalCid
+    
+    UPDATE Student
+    SET TotalFees = @TotalSid
+        ,    RemainingAmt = @RemainSid
+    WHERE StudentID = @Sid
+    
+    PRINT 'Record Updated Successfully in Student Also.'
+END
+GO
+
+INSERT INTO CourseEnrolled
+	VALUES(2, 1)
+GO
+
+--2-Create an insert trigger on FeePayment, record should be updated in RemainingAmt Field of the Student Table for the respective student.
+CREATE TRIGGER dbo.trgInsertFeePayment
+ON FeePayment
+FOR INSERT
+AS
+	DECLARE @Sid INT, @AmountPaid DECIMAL(9,2), @RemainSid DECIMAL(9,2)
+		
+	SELECT @Sid= StudentID 
+		,	@AmountPaid = AmountPaid
+	FROM inserted
+	
+	SELECT @RemainSid = RemainingAmt
+	FROM Student
+	WHERE StudentID = @Sid
+
+	SET @RemainSid = @RemainSid - @AmountPaid
+	
+	IF @RemainSid < 0
+	BEGIN
+		PRINT 'Record Couldn''t be Updated.'
+		ROLLBACK
+	END
+	ELSE
+	BEGIN
+		UPDATE Student
+		SET RemainingAmt = @RemainSid
+		WHERE StudentID = @Sid
+		PRINT 'Record Updated Successfully in Student Also.'
+	END
+GO
+
+DROP TRIGGER dbo.trgInsertFeePayment
+
+INSERT INTO FeePayment(StudentID,AmountPaid)
+	VALUES(1,180000)
+
+SELECT * FROM Student
+
+SELECT * FROM FeePayment
