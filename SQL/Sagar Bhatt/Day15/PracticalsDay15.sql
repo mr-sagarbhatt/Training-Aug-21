@@ -27,7 +27,7 @@ AS
 BEGIN
 	IF NOT EXISTS(SELECT * FROM Deposit WHERE ActNo LIKE @LenderActNo)
 		PRINT @LenderActNo + ' is not exists.'
-	IF NOT EXISTS(SELECT * FROM Deposit WHERE ActNo LIKE @BorrowerActNo)
+	IF NOT EXISTS(SELECT * FROM Deposit WHERE ActNo = @BorrowerActNo)
 		PRINT @BorrowerActNo + ' is not exists.'
 	IF NOT EXISTS(SELECT * FROM Deposit WHERE Amount >= @Amount AND  ActNo = @LenderActNo)
 		PRINT @LenderActNo + ' doesn''t have enough balanace.'
@@ -54,4 +54,4 @@ BEGIN
 END
 
 SELECT * FROM Deposit
-EXEC uspAmountTransfer 102, 103, 100
+EXEC uspAmountTransfer 102, 110, 100
