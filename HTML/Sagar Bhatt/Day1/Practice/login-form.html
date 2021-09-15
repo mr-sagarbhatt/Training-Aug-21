@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      body {
+        background-color: azure;
+        font: large "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      form.login-form {
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      form.login-form label,
+      form.login-form input {
+        font-size: large;
+        margin: 5px;
+        height: 30px;
+        width: 300px;
+      }
+      form.login-form > input::placeholder {
+        color: #999;
+      }
+      form.login-form > input[type="submit"] {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login Form</h1>
+    <form action="" method="post" class="login-form">
+      <label for="email-data">Email:</label><br />
+      <input
+        type="email"
+        name="email"
+        id="email-data"
+        placeholder="Enter your email"
+        required
+      /><br />
+      <label for="password-data">Password:</label><br />
+      <input
+        type="password"
+        name="password"
+        id="password-data"
+        placeholder="Enter your password"
+        required
+      /><br /><br />
+      <input type="submit" value="Login" />
+    </form>
+  </body>
+</html>

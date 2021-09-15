@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department List</title>
+    <style>
+      body{
+        background-color: azure;
+        font-size: large;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      ul.dept-node{
+        list-style-type: disc;
+      }
+      ul.dept-dotnet{
+        list-style-type: square;
+      }
+      ul.dept-php{
+        list-style-type: circle;
+      }
+    </style>
+  </head>
+  <body>
+    <dd>
+      <dt>Departments:</dt>
+      <dd>
+        <ol>
+          <li>NodeJS
+            <ul class="dept-node">
+              <li>Sagar
+                <ol type="i">
+                  <li>Harsh</li>
+                  <li>Khushbu</li>
+                  <li>Zeel</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li>DotNet
+            <ul class="dept-dotnet">
+              <li>Meet
+                <ol type="a">
+                  <li>Akash</li>
+                  <li>Vaidehi</li>
+                  <li>Nirav</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li>PHP
+            <ul class="dept-php">
+              <li>Niraj
+                <ol type="1" start="3" reversed>
+                  <li>Vishal</li>
+                  <li>Vaibhavi</li>
+                  <li>Tirth</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </dd>
+    </dd>
+  </body>
+</html>

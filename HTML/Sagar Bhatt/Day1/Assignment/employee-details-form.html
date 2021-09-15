@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details Form</title>
+    <style>
+      body {
+        background-color: azure;
+        font: large "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      form.login-form {
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+      }
+      form.login-form label,
+      form.login-form select,
+      form.login-form input[type="text"],
+      form.login-form input[type="email"],
+      form.login-form input[type="number"] {
+        font-size: large;
+        margin-bottom: 10px;
+        height: 20px;
+        padding: 10px auto;
+      }
+      form.login-form select {
+        height: 30px;
+      }
+      form.login-form > input::placeholder {
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Employee Details Form</h1>
+    <form action="" method="get" class="login-form">
+      <label for="name-data">Name:</label>
+      <input
+        type="text"
+        name="name"
+        id="name-data"
+        placeholder="Enter your name"
+        required
+      />
+      <label for="age-data">Age:</label>
+      <input
+        type="number"
+        name="age"
+        id="age-data"
+        placeholder="Enter your age"
+        required
+      />
+      <fieldset>
+        <legend>Gender:</legend>
+        <label for="male-data">Male</label>
+        <input type="radio" name="gender" id="male-data" required />
+        <label for="female-data">Female</label>
+        <input type="radio" name="gender" id="female-data" required />
+      </fieldset>
+      <label for="designation-data">Designation:</label>
+      <input
+        type="text"
+        name="designation"
+        id="designation-data"
+        placeholder="Enter your designation"
+        list="designation-data-list"
+        required
+      />
+      <datalist id="designation-data-list">
+        <option label="Manager" value="Manager"></option>
+        <option label="Employee" value="Employee"></option>
+      </datalist>
+      <label for="salary-data">Salary:</label>
+      <input
+        type="number"
+        name="salary"
+        id="salary-data"
+        placeholder="Enter your salary"
+        required
+      />
+      <label for="location-data">Location:</label>
+      <select name="location" id="locatgion-data" required autocomplete="off">
+        <option value="" disabled selected>--Select your location--</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Baroda">Baroda</option>
+        <option value="Surat">Surat</option>
+        <option value="Rajkot">Rajkot</option>
+      </select>
+      <label for="email-data">Email Id:</label>
+      <input
+        type="email"
+        name="email"
+        id="email-data"
+        placeholder="Enter your email"
+        required
+      />
+      <label for="date-data">Date of Joining:</label>
+      <input type="date" name="Date" id="date-data" required />
+      <label for="contact-data">Contact Number</label>
+      <input
+        type="number"
+        name="contact"
+        id="contact-data"
+        placeholder="Enter Contact Number"
+        required
+      />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
