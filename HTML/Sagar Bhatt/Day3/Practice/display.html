@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dsplay</title>
+    <style>
+      .container {
+        background-color: #5b9bd5;
+        width: fit-content;
+        padding: 10px;
+      }
+      .container > div {
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        border: 1px groove #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Displayed using inline-block</h1>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
+
+<!-- * The display Property
+  The display property specifies if/how an element is displayed.
+  Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
+
+  /* legacy values */
+    display: block;
+    display: inline;
+    display: inline-block;
+    display: flex;
+    display: inline-flex;
+    display: grid;
+    display: inline-grid;
+    display: none;
+-->

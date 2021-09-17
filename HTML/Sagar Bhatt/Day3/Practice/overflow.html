@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow</title>
+    <style>
+      .overflow-auto {
+        border: 1px groove #999;
+        height: 100px;
+        width: 300px;
+        overflow: auto;
+      }
+      .overflow-x {
+        white-space: nowrap;
+        border: 1px groove #999;
+        height: 100px;
+        width: 300px;
+        overflow-x: auto;
+      }
+      .overflow-y {
+        border: 1px groove #999;
+        height: 100px;
+        width: 300px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>overflow: overflow-auto</h3>
+    <div class="overflow-auto">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id saepe nobis
+      maiores deleniti porro laboriosam debitis! Tenetur qui debitis aliquam
+      quae sit commodi neque non sapiente possimus, fuga aut corrupti reiciendis
+      odio vitae! Autem cupiditate perferendis doloremque minus non quis error
+      soluta dolorum doloribus voluptate culpa aut aspernatur, praesentium
+      reiciendis!
+    </div>
+    <h3>overflow: overflow-x</h3>
+    <div class="overflow-x">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id saepe nobis
+      maiores deleniti porro laboriosam debitis! Tenetur qui debitis aliquam
+      quae sit commodi neque non sapiente possimus, fuga aut corrupti reiciendis
+      odio vitae! Autem cupiditate perferendis doloremque minus non quis error
+      soluta dolorum doloribus voluptate culpa aut aspernatur, praesentium
+      reiciendis!
+    </div>
+    <h3>overflow: overflow-y</h3>
+    <div class="overflow-y">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id saepe nobis
+      maiores deleniti porro laboriosam debitis! Tenetur qui debitis aliquam
+      quae sit commodi neque non sapiente possimus, fuga aut corrupti reiciendis
+      odio vitae! Autem cupiditate perferendis doloremque minus non quis error
+      soluta dolorum doloribus voluptate culpa aut aspernatur, praesentium
+      reiciendis!
+    </div>
+  </body>
+</html>
+
+<!-- * CSS Overflow:
+    The overflow property specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+    The overflow property has the following values:
+        visible - Default. The overflow is not clipped. The content renders outside the element's box
+        hidden - The overflow is clipped, and the rest of the content will be invisible
+        scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content
+        auto - Similar to scroll, but it adds scrollbars only when necessary.
+
+    overflow-x and overflow-y:
+    The overflow-x and overflow-y properties specifies whether to change the overflow of content just horizontally or vertically (or both):
+        overflow-x specifies what to do with the left/right edges of the content.
+        overflow-y specifies what to do with the top/bottom edges of the content.
+-->
