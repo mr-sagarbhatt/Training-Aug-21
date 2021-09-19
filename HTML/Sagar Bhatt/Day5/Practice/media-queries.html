@@ -1,0 +1,89 @@
+<!--
+    ? 1-You have one h1 and one paragraph in your page with blue color border. For all the media screen and query selector (maximum width 500px) it should be change to red color border.
+    ? 2-Media queries with breakpoint: https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery_breakpoints
+    ? 3-Hide elements with Media queries: https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery_breakpoints
+    ? 4-Change Font size with Media Queries: https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <style>
+      .container {
+        border: 5px groove navy;
+        background-color: #ffe984;
+        padding: 10px;
+        font: 25px "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      @media only screen and (max-width: 1100px) {
+        .container {
+          border: 5px groove coral;
+          background-color: ivory;
+          font: 20px "Courier New", Courier, monospace;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .container {
+          border: 5px groove midnightblue;
+          background-color: mistyrose;
+          font: 18px "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .container {
+          border: 5px groove indigo;
+          background-color: khaki;
+          font: 16px "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+        }
+      }
+      @media only screen and (max-width: 500px) {
+        .container {
+          border: 5px groove red;
+          background-color: lightcyan;
+          font: 14px "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        }
+        h3 {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla,
+        provident!
+      </h1>
+      <h3>Will be hidden, if the screen size is 500px wide or less!</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+        laboriosam officia officiis quod. Maxime soluta ab libero itaque quia
+        sed reprehenderit possimus aspernatur obcaecati eligendi, laborum
+        recusandae illum nobis quas dolorum labore fugit, voluptatem ea autem.
+        Eligendi, aliquam animi? Dolore nostrum debitis officiis accusamus et
+        vero, facere laborum nisi perspiciatis earum dignissimos exercitationem,
+        deleniti dolorem veritatis optio nesciunt? Quo quibusdam ab omnis
+        consequatur nihil labore, animi deleniti nesciunt quae facilis dolores
+        ipsum, dolorum sint odit soluta eveniet fuga atque. Fugit eaque aperiam
+        deleniti quisquam facere dolor atque labore tempora necessitatibus.
+        Accusantium ipsum nobis quis tempore deleniti dolorum odio temporibus.
+        Doloremque.
+      </p>
+    </div>
+  </body>
+</html>
+
+<!--
+  * CSS Grid:
+    todo: https://www.w3schools.com/css/css_grid.asp
+  * CSS Media Queries:
+    todo: https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+    https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+    https://www.w3schools.com/css/css3_mediaqueries.asp
+-->
