@@ -1,0 +1,117 @@
+<!--
+    ? 1-https://www.w3schools.com/css/exercise.asp?filename=exercise_boxmodel1
+    ? 2-https://www.w3schools.com/css/exercise.asp?filename=exercise_boxmodel2
+    ? 3-https://www.w3schools.com/css/exercise.asp?filename=exercise_boxmodel3
+    ? 4-https://www.w3schools.com/css/exercise.asp?filename=exercise_boxmodel4
+    ? 5-Create a flexbox with four flex items
+    ? 6-Flexbox with three flex items –right to left direction
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box-model {
+        background-color: #ffffff;
+        width: 200px;
+        padding: 25px;
+        border: 25px solid #707070;
+        margin: 25px;
+      }
+      .flex-container {
+        display: flex;
+        background-color: #707070;
+        width: fit-content;
+      }
+      .flex {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: #707070;
+        width: fit-content;
+      }
+      .flex-container .flex-item,
+      .flex .flex-item {
+        padding: 10px;
+        margin: 10px;
+        background-color: #ffffff;
+      }
+      .container {
+        display: flex;
+        /* flex-direction: column;
+        flex-wrap: wrap; */
+        flex-flow: row wrap; /* flex-flow: Shorthand for flex-direction flex-wrap*/
+        background-color: #707070;
+        align-items: center;
+        justify-content: center;
+      }
+      .item {
+        padding: 70px;
+        margin: 50px;
+        background-color: #ffffff;
+      }
+      .item:nth-child(odd) {
+        /* flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 200px; */
+        flex: 1 1 200px; /* flex: Shorthand for flex-grow, flex-shrink, flex-basis */
+      }
+      .item:nth-child(even) {
+        flex: 1 1 100px;
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Box Model</h1>
+    <div class="box-model">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+    <h1>CSS Flexbox</h1>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+    </div>
+    <br />
+    <div class="flex">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </body>
+</html>
+
+<!-- * CSS box model:
+    It is essentially a box that wraps around every HTML element.
+    It consists of: margins, borders, padding, and the actual content.
+
+    * Flexbox: Parent Element (Container), Child Elements (Items)
+    The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+    The flex container properties are:
+      flex-direction
+      flex-wrap
+      flex-flow
+      justify-content
+      align-items
+      align-content
+    The CSS Flexbox Items Properties:
+      align-self
+      flex
+      flex-basis
+      flex-grow
+      flex-shrink
+      order
+-->
