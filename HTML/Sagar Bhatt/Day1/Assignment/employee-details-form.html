@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Details Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../Project/styles/style.css" />
     <style>
-      body {
+      /* body {
         background-color: azure;
         font: large "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
           "Lucida Sans", Arial, sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
+      } */
+      h1 {
+        text-align: center;
+        margin-bottom: 5px;
       }
       form.login-form {
         border: 1px solid;
@@ -21,6 +32,7 @@
         display: flex;
         flex-direction: column;
         width: 350px;
+        margin: auto;
       }
       form.login-form label,
       form.login-form select,
@@ -41,80 +53,139 @@
     </style>
   </head>
   <body>
-    <h1>Employee Details Form</h1>
-    <form action="" method="get" class="login-form">
-      <label for="name-data">Name:</label>
-      <input
-        type="text"
-        name="name"
-        id="name-data"
-        placeholder="Enter your name"
-        required
-      />
-      <label for="age-data">Age:</label>
-      <input
-        type="number"
-        name="age"
-        id="age-data"
-        placeholder="Enter your age"
-        required
-      />
-      <fieldset>
-        <legend>Gender:</legend>
-        <label for="male-data">Male</label>
-        <input type="radio" name="gender" id="male-data" required />
-        <label for="female-data">Female</label>
-        <input type="radio" name="gender" id="female-data" required />
-      </fieldset>
-      <label for="designation-data">Designation:</label>
-      <input
-        type="text"
-        name="designation"
-        id="designation-data"
-        placeholder="Enter your designation"
-        list="designation-data-list"
-        required
-      />
-      <datalist id="designation-data-list">
-        <option label="Manager" value="Manager"></option>
-        <option label="Employee" value="Employee"></option>
-      </datalist>
-      <label for="salary-data">Salary:</label>
-      <input
-        type="number"
-        name="salary"
-        id="salary-data"
-        placeholder="Enter your salary"
-        required
-      />
-      <label for="location-data">Location:</label>
-      <select name="location" id="locatgion-data" required autocomplete="off">
-        <option value="" disabled selected>--Select your location--</option>
-        <option value="Ahmedabad">Ahmedabad</option>
-        <option value="Baroda">Baroda</option>
-        <option value="Surat">Surat</option>
-        <option value="Rajkot">Rajkot</option>
-      </select>
-      <label for="email-data">Email Id:</label>
-      <input
-        type="email"
-        name="email"
-        id="email-data"
-        placeholder="Enter your email"
-        required
-      />
-      <label for="date-data">Date of Joining:</label>
-      <input type="date" name="Date" id="date-data" required />
-      <label for="contact-data">Contact Number</label>
-      <input
-        type="number"
-        name="contact"
-        id="contact-data"
-        placeholder="Enter Contact Number"
-        required
-      />
-      <br />
-      <input type="submit" value="Submit" />
-    </form>
+    <header>
+      <div class="logo">
+        <!-- <img
+          src="https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2020/12/logo_2500X1875-2048x1536.jpg"
+          alt="logo"
+        /> -->
+        <span><a href="../../Project/index.html">RadixWeb</a></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../../Project/index.html" class="active">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Bootstrap</a></li>
+          <li><a href="#">SCSS</a></li>
+          <li><a href="#">Javascript</a></li>
+          <li><a href="#">jQuery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <aside>
+        <div class="folder-container">
+          <div class="folder">Day1</div>
+          <div class="sub-folder">Practice</div>
+          <div class="file">
+            <a href="../Practice/company-department-list.html">
+              Company department list
+            </a>
+          </div>
+          <div class="file">
+            <a href="../Practice/horizontal-navbar.html"> Horizontal navbar </a>
+          </div>
+          <div class="file">
+            <a href="../Practice/login-form.html">Login form</a>
+          </div>
+          <div class="file">
+            <a href="../Practice/news-article.html" target="_blank">
+              News Article
+            </a>
+          </div>
+          <div class="file">
+            <a href="../Practice/student-report-card.html">
+              Student report card
+            </a>
+          </div>
+          <div class="sub-folder">Assignment</div>
+          <div class="file">
+            <a href="./employee-details-form.html"> Employee details form </a>
+          </div>
+        </div>
+      </aside>
+      <section>
+        <h1>Employee Details Form</h1>
+        <form action="" method="get" class="login-form">
+          <label for="name-data">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name-data"
+            placeholder="Enter your name"
+            required
+          />
+          <label for="age-data">Age:</label>
+          <input
+            type="number"
+            name="age"
+            id="age-data"
+            placeholder="Enter your age"
+            required
+          />
+          <fieldset>
+            <legend>Gender:</legend>
+            <label for="male-data">Male</label>
+            <input type="radio" name="gender" id="male-data" required />
+            <label for="female-data">Female</label>
+            <input type="radio" name="gender" id="female-data" required />
+          </fieldset>
+          <label for="designation-data">Designation:</label>
+          <input
+            type="text"
+            name="designation"
+            id="designation-data"
+            placeholder="Enter your designation"
+            list="designation-data-list"
+            required
+          />
+          <datalist id="designation-data-list">
+            <option label="Manager" value="Manager"></option>
+            <option label="Employee" value="Employee"></option>
+          </datalist>
+          <label for="salary-data">Salary:</label>
+          <input
+            type="number"
+            name="salary"
+            id="salary-data"
+            placeholder="Enter your salary"
+            required
+          />
+          <label for="location-data">Location:</label>
+          <select
+            name="location"
+            id="locatgion-data"
+            required
+            autocomplete="off"
+          >
+            <option value="" disabled selected>--Select your location--</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Baroda">Baroda</option>
+            <option value="Surat">Surat</option>
+            <option value="Rajkot">Rajkot</option>
+          </select>
+          <label for="email-data">Email Id:</label>
+          <input
+            type="email"
+            name="email"
+            id="email-data"
+            placeholder="Enter your email"
+            required
+          />
+          <label for="date-data">Date of Joining:</label>
+          <input type="date" name="Date" id="date-data" required />
+          <label for="contact-data">Contact Number</label>
+          <input
+            type="number"
+            name="contact"
+            id="contact-data"
+            placeholder="Enter Contact Number"
+            required
+          />
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </article>
   </body>
 </html>

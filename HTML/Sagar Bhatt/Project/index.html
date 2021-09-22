@@ -4,35 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar</title>
+    <title>HTML Practicals</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
       integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../Project/styles/style.css" />
-    <style>
-      /* body {
-        background-color: azure;
-        font: large "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-          "Lucida Sans", Arial, sans-serif;
-      } */
-      hgroup {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-      }
-      hgroup h2 {
-        margin-right: 10px;
-      }
-      .nav-ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: flex-start;
-        gap: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <header>
@@ -41,11 +20,11 @@
           src="https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2020/12/logo_2500X1875-2048x1536.jpg"
           alt="logo"
         /> -->
-        <span><a href="../../Project/index.html">RadixWeb</a></span>
+        <span><a href="./index.html">RadixWeb</a></span>
       </div>
       <nav>
         <ul>
-          <li><a href="../../Project/index.html" class="active">HTML</a></li>
+          <li><a href="./index.html" class="active">HTML</a></li>
           <li><a href="#">CSS</a></li>
           <li><a href="#">Bootstrap</a></li>
           <li><a href="#">SCSS</a></li>
@@ -60,45 +39,48 @@
           <div class="folder">Day1</div>
           <div class="sub-folder">Practice</div>
           <div class="file">
-            <a href="./company-department-list.html">
+            <a href="../Day1/Practice/company-department-list.html">
               Company department list
             </a>
           </div>
           <div class="file">
-            <a href="./horizontal-navbar.html"> Horizontal navbar </a>
+            <a href="../Day1/Practice/horizontal-navbar.html">
+              Horizontal navbar
+            </a>
           </div>
           <div class="file">
-            <a href="./login-form.html">Login form</a>
+            <a href="../Day1/Practice/login-form.html">Login form</a>
           </div>
           <div class="file">
-            <a href="./news-article.html" target="_blank">News Article</a>
+            <a href="../Day1/Practice/news-article.html" target="_blank">
+              News Article
+            </a>
           </div>
           <div class="file">
-            <a href="./student-report-card.html"> Student report card </a>
+            <a href="../Day1/Practice/student-report-card.html">
+              Student report card
+            </a>
           </div>
           <div class="sub-folder">Assignment</div>
           <div class="file">
-            <a href="../Assignment/employee-details-form.html">
+            <a href="../Day1/Assignment/employee-details-form.html">
               Employee details form
             </a>
           </div>
         </div>
       </aside>
       <section>
-        <hr />
-        <hgroup>
-          <h2>RadixWeb</h2>
-          <nav>
-            <ul class="nav-ul">
-              <li><a href="./horizontal-navbar.html">Home</a></li>
-              <li><a href="./horizontal-navbar.html">Categories</a></li>
-              <li><a href="./horizontal-navbar.html">Contact US</a></li>
-              <li><a href="./horizontal-navbar.html">About Us</a></li>
-            </ul>
-          </nav>
-        </hgroup>
-        <hr />
+        <lottie-player
+          src="./assets/lottie-files/html.json"
+          mode="bounce"
+          background="transparent"
+          speed="0.5"
+          loop
+          autoplay
+        ></lottie-player>
       </section>
     </article>
+    <!-- lottieFiles Js -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </body>
 </html>

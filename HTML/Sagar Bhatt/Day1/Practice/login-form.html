@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../Project/styles/style.css" />
     <style>
-      body {
-        background-color: azure;
-        font: large "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-          "Lucida Sans", Arial, sans-serif;
+      .login-container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -35,25 +39,79 @@
     </style>
   </head>
   <body>
-    <h1>Login Form</h1>
-    <form action="" method="post" class="login-form">
-      <label for="email-data">Email:</label><br />
-      <input
-        type="email"
-        name="email"
-        id="email-data"
-        placeholder="Enter your email"
-        required
-      /><br />
-      <label for="password-data">Password:</label><br />
-      <input
-        type="password"
-        name="password"
-        id="password-data"
-        placeholder="Enter your password"
-        required
-      /><br /><br />
-      <input type="submit" value="Login" />
-    </form>
+    <header>
+      <div class="logo">
+        <!-- <img
+          src="https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2020/12/logo_2500X1875-2048x1536.jpg"
+          alt="logo"
+        /> -->
+        <span><a href="../../Project/index.html">RadixWeb</a></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../../Project/index.html" class="active">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">Bootstrap</a></li>
+          <li><a href="#">SCSS</a></li>
+          <li><a href="#">Javascript</a></li>
+          <li><a href="#">jQuery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article>
+      <aside>
+        <div class="folder-container">
+          <div class="folder">Day1</div>
+          <div class="sub-folder">Practice</div>
+          <div class="file">
+            <a href="./company-department-list.html">
+              Company department list
+            </a>
+          </div>
+          <div class="file">
+            <a href="./horizontal-navbar.html"> Horizontal navbar </a>
+          </div>
+          <div class="file">
+            <a href="./login-form.html">Login form</a>
+          </div>
+          <div class="file">
+            <a href="./news-article.html" target="_blank">News Article</a>
+          </div>
+          <div class="file">
+            <a href="./student-report-card.html"> Student report card </a>
+          </div>
+          <div class="sub-folder">Assignment</div>
+          <div class="file">
+            <a href="../Assignment/employee-details-form.html">
+              Employee details form
+            </a>
+          </div>
+        </div>
+      </aside>
+      <section>
+        <div class="login-container">
+          <h1>Login Form</h1>
+          <form action="" method="post" class="login-form">
+            <label for="email-data">Email:</label><br />
+            <input
+              type="email"
+              name="email"
+              id="email-data"
+              placeholder="Enter your email"
+              required
+            /><br />
+            <label for="password-data">Password:</label><br />
+            <input
+              type="password"
+              name="password"
+              id="password-data"
+              placeholder="Enter your password"
+              required
+            /><br /><br />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+      </section>
+    </article>
   </body>
 </html>
