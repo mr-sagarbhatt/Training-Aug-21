@@ -56,7 +56,7 @@ header ul {
   text-align: center;
   list-style: none;
   display: none;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out 0s;
 }
 #click:checked ~ ul {
   left: 0%;
@@ -86,8 +86,10 @@ aside {
   border: 2px groove var(--dark-grey);
   text-transform: capitalize;
 }
+.folder-container {
+  margin-bottom: 30px;
+}
 aside div.folder {
-  /* margin-bottom: 10px; */
   color: var(--blackish);
 }
 aside div.sub-folder {
@@ -150,12 +152,13 @@ section {
   header .menu-btn i {
     display: none;
   }
+  #click:checked ~ ul,
   header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  header nav a::after {
+  header nav ul li a::after {
     content: "";
     position: absolute;
     width: 0%;
@@ -165,10 +168,10 @@ section {
     bottom: -10px;
     transition: all 0.4s ease-in-out 0s;
   }
-  a:hover::after {
+  header nav ul li a:hover::after {
     width: 100%;
   }
-  header nav .active::after {
+  header nav ul li .active::after {
     background-color: var(--egg-yellow);
   }
   /* article {
