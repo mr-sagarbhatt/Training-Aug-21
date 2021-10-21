@@ -208,9 +208,9 @@ section {
   section {
     min-height: 90vh;
   }
-  lottie-player {
+  /* lottie-player {
     height: 82vh;
-  }
+  } */
 }
 @media only screen and (min-width: 1200px) {
   body {
