@@ -51,7 +51,8 @@ document.body.onload = () => {
     btnCart.appendChild(btnText);
     tr.appendChild(btnCart);
 
-    btnCart.onclick = () => {
+    btnCart.onclick = (event) => {
+      event.preventDefault();
       const key = "cartItems";
       let cartProducts = JSON.parse(localStorage.getItem(key));
       let data = items;
