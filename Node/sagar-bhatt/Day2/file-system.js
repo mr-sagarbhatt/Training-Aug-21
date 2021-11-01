@@ -46,3 +46,7 @@ fs.unlink("new-data.json", function (err) {
   if (err) throw err;
   console.log("File deleted!");
 });
+
+// * fs module
+// TODO: https://www.geeksforgeeks.org/node-js-file-system/
+// ? To handle file operations like creating, reading, deleting, etc., Node.js provides an inbuilt module called FS (File System).Node.js gives the functionality of file I/O by providing wrappers around the standard POSIX functions. All file system operations can have synchronous and asynchronous forms depending upon user requirements.

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="
+          main
+          d-flex
+          flex-column
+          align-items-center
+          mt-5
+          font-monospace
+          fs-5
+        "
+      >
+        <h1>SignUp Form</h1>
+        <form action="" method="get" id="formSignUp">
+          <div class="row mt-3">
+            <div class="col-12">
+              <label for="txtFName">FirstName</label>
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="txtFName"
+                id="txtFName"
+                placeholder="Enter First Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <label for="txtLName">LastName</label>
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="txtLName"
+                id="txtLName"
+                placeholder="Enter Last Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="row form-check ps-0 mt-3">
+            <div class="col-12">
+              <label>Skills</label>
+            </div>
+            <div class="col-6" id="skills">
+              <input
+                type="checkbox"
+                name="chkSkills"
+                value="Reading"
+                id="chkSkills"
+              />
+              <label class="form-check-label" for="chkSkills">Reading</label>
+            </div>
+            <div class="col-6">
+              <input type="button" value="add" id="btnAdd" />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <input type="button" value="Sign Up" id="btnSubmit" />
+          </div>
+        </form>
+        <div id="result"></div>
+      </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom JS -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

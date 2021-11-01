@@ -40,3 +40,17 @@ const str = "Learning %s";
 const result = util.format(str, "NodeJS Util Module.");
 
 console.log(result);
+
+// --------------------------------------------------------------------------------------
+
+// * http
+// TODO: https://www.geeksforgeeks.org/node-js-http-module/
+// ?  To use the HTTP server in node, we need to require the HTTP module. The HTTP module creates an HTTP server that listens to server ports and gives a response back to the client.We can create a HTTP server with the help of http.createServer() method.
+// ? To make HTTP requests in Node.js, there is a built-in module HTTP in Node.js to transfer data over the HTTP.To make requests via the HTTP module http.request() method is used.
+
+// * url
+// ? The ‘url’ module provides utilities for URL resolution and parsing. The getters and setters implement the properties of URL objects on the class prototype, and the URL class is available on the global object.
+
+// * path
+// TODO: https://nodejs.dev/learn/the-nodejs-path-module
+// ? The path module provides a lot of very useful functionality to access and interact with the file system.

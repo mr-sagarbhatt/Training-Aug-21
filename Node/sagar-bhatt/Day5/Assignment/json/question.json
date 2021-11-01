@@ -1,0 +1,47 @@
+[
+  {
+    "question": "JavaScript is a _____ language.",
+    "options": [
+      "Object-Oriented",
+      "High-level",
+      "Assembly-language",
+      "Object-Based"
+    ]
+  },
+  {
+    "question": "JavaScript is ideal to _____.",
+    "options": [
+      "make computations in HTML simpler",
+      "minimize storage requirements on the web server",
+      "increase the download time for the client",
+      "increase the loading time of the website"
+    ]
+  },
+  {
+    "question": "Which of the following is not considered as an error in JavaScript?",
+    "options": [
+      "Syntax error",
+      "Missing of semicolons",
+      "Division by zero",
+      "Missing of Bracket"
+    ]
+  },
+  {
+    "question": "JavaScript can be written _____.",
+    "options": [
+      "directly into JS file and included into HTML",
+      "directly on the server page",
+      "directly into HTML pages",
+      "directly into the css file"
+    ]
+  },
+  {
+    "question": "The expression of calling (or executing) a function or method in JavaScript is called _____.",
+    "options": [
+      "Primary expression",
+      "Functional expression",
+      "Invocation expression",
+      "Property Access Expression"
+    ]
+  }
+]
