@@ -69,16 +69,144 @@ $(() => {
             localStorage.setItem("vacancies", getVacancies);
           })
       );
+
+    // * APPEND DEPARTMENTS IN APPLICANT FORM
+    $("#selDepartment").append(
+      $(`<option></option>`).val(value["department"]).text(value["department"])
+    );
   });
 
-  // * Vacancies: department, noOfVacancy
-  // * Applicant: vacancies, data
-  // * Interview : applicant, timing, result
+  // * Class: Applicant
+  class Applicants {
+    constructor(name, qualification, department) {
+      this.name = name;
+      this.qualification = qualification;
+      this.department = department;
+    }
+    getApplicant() {
+      return {
+        name: this.name,
+        qualification: this.qualification,
+        department: this.department,
+      };
+    }
+  }
 
-  // hr > vac
-  // app > vac apply
-  // hr > applicant numner / cross check
-  // hr > interview timing process
-  // hr > resulut declare
-  // app > selected /rejected
+  // * Create Applicant
+  $("#formApplicants #btnApplicants").on("click", () => {
+    const txtApplicant = $("#formApplicants #txtApplicant").val();
+    const txtQualification = $("#formApplicants #txtQualification").val();
+    const selDepartment = $("#formApplicants #selDepartment").val();
+
+    if (
+      txtApplicant.trim() !== "" &&
+      txtQualification.trim() !== "" &&
+      selDepartment.trim() !== ""
+    ) {
+      const objApplicants = new Applicants(
+        txtApplicant,
+        txtQualification,
+        selDepartment
+      );
+      const item = objApplicants.getApplicant();
+
+      const key = "applicants";
+      let lsApplicants = JSON.parse(localStorage.getItem(key));
+      if (lsApplicants) {
+        lsApplicants.push(item);
+        lsApplicants = JSON.stringify(lsApplicants);
+        localStorage.setItem(key, lsApplicants);
+      } else {
+        let newApplicants = [];
+        newApplicants.push(item);
+        lsApplicants = JSON.stringify(newApplicants);
+        localStorage.setItem(key, lsApplicants);
+      }
+    }
+  });
+
+  // * Display Applicants
+  let getApplicants = JSON.parse(localStorage.getItem("applicants"));
+  $.each(getApplicants, (index, value) => {
+    $("#tbodyApplicants")
+      .append($("<tr></tr>"))
+      .append($("<td></td>").text(value["name"]))
+      .append($("<td></td>").text(value["qualification"]))
+      .append($("<td></td>").text(value["department"]))
+      .append(
+        $("<td></td>")
+          .append(
+            $("<a></a>")
+              .prop({
+                class: "btn btn-dark bg-dark py-1",
+                href: "./index.html",
+              })
+              .text("Remove")
+          )
+          .on("click", () => {
+            console.log(index);
+            getApplicants.splice(index, 1);
+            getApplicants = JSON.stringify(getApplicants);
+            localStorage.setItem("applicants", getApplicants);
+          })
+      )
+      .append(
+        $("<td></td>")
+          .append(
+            $("<a></a>")
+              .prop({
+                class: "btn btn-dark bg-dark py-1",
+                href: "./index.html",
+              })
+              .text("Hire")
+          )
+          .on("click", () => {
+            let item = getApplicants.splice(index, 1);
+            getApplicants = JSON.stringify(getApplicants);
+            localStorage.setItem("applicants", getApplicants);
+
+            item = item[0];
+
+            const key = "hiredApplicants";
+            let lsSelApplicants = JSON.parse(localStorage.getItem(key));
+            if (lsSelApplicants) {
+              lsSelApplicants.push(item);
+              lsSelApplicants = JSON.stringify(lsSelApplicants);
+              localStorage.setItem(key, lsSelApplicants);
+            } else {
+              let newApplicants = [];
+              newApplicants.push(item);
+              lsSelApplicants = JSON.stringify(newApplicants);
+              localStorage.setItem(key, lsSelApplicants);
+            }
+          })
+      );
+  });
+
+  // * Display Hired Applicants
+  let getHiredApplicants = JSON.parse(localStorage.getItem("hiredApplicants"));
+  $.each(getHiredApplicants, (index, value) => {
+    $("#tbodyHiredApplicants")
+      .append($("<tr></tr>"))
+      .append($("<td></td>").text(value["name"]))
+      .append($("<td></td>").text(value["qualification"]))
+      .append($("<td></td>").text(value["department"]))
+      .append(
+        $("<td></td>")
+          .append(
+            $("<a></a>")
+              .prop({
+                class: "btn btn-dark bg-dark py-1",
+                href: "./index.html",
+              })
+              .text("Remove")
+          )
+          .on("click", () => {
+            console.log(index);
+            getHiredApplicants.splice(index, 1);
+            getHiredApplicants = JSON.stringify(getHiredApplicants);
+            localStorage.setItem("hiredApplicants", getHiredApplicants);
+          })
+      );
+  });
 });
