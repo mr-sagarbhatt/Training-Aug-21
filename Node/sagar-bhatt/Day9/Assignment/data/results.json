@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "Sagar",
+      "result": "A+"
+    },
+    {
+      "id": 2,
+      "name": "Harsh",
+      "result": "A+"
+    },
+    {
+      "id": 3,
+      "name": "Khushbu",
+      "result": "A+"
+    }
+  ]
+}

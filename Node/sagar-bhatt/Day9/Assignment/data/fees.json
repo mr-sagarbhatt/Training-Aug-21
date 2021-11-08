@@ -1,0 +1,19 @@
+{
+  "fees": [
+    {
+      "id": 1,
+      "name": "Sagar",
+      "payment": 1000
+    },
+    {
+      "id": 2,
+      "name": "Harsh",
+      "payment": 1000
+    },
+    {
+      "id": 3,
+      "name": "Khushbu",
+      "payment": 1000
+    }
+  ]
+}
