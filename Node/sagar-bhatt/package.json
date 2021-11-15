@@ -20,6 +20,7 @@
     "jsdom": "^18.0.0",
     "jsonwebtoken": "^8.5.1",
     "minimist": "^1.2.5",
+    "mongoose": "^6.0.12",
     "progress": "^2.0.3"
   }
 }
