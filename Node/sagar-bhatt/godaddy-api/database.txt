@@ -1,0 +1,40 @@
+Login:
+    username/ customer number, password
+
+Profile:
+    FirstName, LastName, Organization, Email, Default currency
+    Primary Phone, Mobile Phone, Home Phone, Fax
+    Country/Region, Address, Address 2, Postal code, City, Province
+
+Default currency: ["AED", "ARS", "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "COP", "CZK", "DKK",
+"EGP", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MAD",
+"MXN", "MYR", "NOK", "NZD", "PEN", "PHP", "PKR", "PLN", "RON", "RUB", "SAR",
+"SEK", "SGD", "THB", "TRY", "TWD", "UAH", "USD", "UYU", "VND", "ZAR",]
+
+Category/SubCategory:
+    // * Domains: (domains)
+    //  ? Domains: Domain Name Search ,Transfer Domain Names ,Privacy & Protection for Domains ,WHOIS ,Auctions for Domain Names ,Appraise Domain Name Value ,Investing in Domains
+
+    // * Hosting: (hosting)
+    // ? Hosting: Web Hosting, Business Hosting, GoDaddy Website Builder
+    // ? Ecommerce Hosting: Managed WordPress Ecommerce, GoDaddy Online Store Builder
+    // ? WordPress Solutions: Managed WordPress, Managed WordPress Pro
+    // ? Servers: VPS, VPS - Fully Managed, Dedicated Server, Dedicated Server - Fully Managed, Reseller (WHMCS) Hosting, Dedicated IP
+
+    // * Security:
+    // ? SSL Certificates: DV SSL Certificate ,EV SSL Certificate ,SAN SSL ,Wildcard SSL ,Managed SSL Service
+    // ? Web Security: Backups, Complete Website Security
+
+    // * Email & Marketing
+    // ? Email: Email & Office 365
+    // ? Marketing Apps & Services: Email Marketing,Digital Marketing Suite,SEO Services
+
+--------------------------------------------
+
+Email & Office / Productivity | Professional Email, Microsoft Office
+
+Hosting / Website Hosting | Web Hosting, Windows Hosting, Business Hosting, Dedicated Server, VPS Hosting, Reseller Hosting
+
+Web Security / SSL Certificates | SSL Certificates, Managed SSL Service, EV SSL Certificates, OV SSL Certificates, DV SSL Certificates, SAN SSL Certificate, Wildcard SSL Certificates
+
+Websites / WordPress | WordPress Websites, WordPress Themes
