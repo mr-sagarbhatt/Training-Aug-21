@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const enum_1 = require("./enum");
+const functions_1 = require("./functions");
 const Customer_1 = require("./classes/Customer");
 const Country_1 = require("./classes/Country");
 const Restaurant_1 = require("./classes/Restaurant");
@@ -38,11 +39,14 @@ const table1 = objTable1.getTable();
 const table2 = objTable2.getTable();
 const arrTables = [table1, table2];
 // * Booking:
-const objBooking1 = new Booking_1.Booking(1, 1, 1, enum_1.eMealPlan.launch, new Date("2021-12-3"), "11:20pm", "12:20pm", generateToken(), 5, enum_1.eBookingStatus.pending);
-const objBooking2 = new Booking_1.Booking(2, 2, 2, enum_1.eMealPlan.dinner, new Date("2021-12-3"), "11:20pm", "12:20pm", generateToken(), 5, enum_1.eBookingStatus.pending);
+const objBooking1 = new Booking_1.Booking(1, 1, 1, enum_1.eMealPlan.launch, new Date("2021-12-3"), "11.20", "12.20", (0, functions_1.generateToken)(), 5, enum_1.eBookingStatus.pending);
+const objBooking2 = new Booking_1.Booking(2, 2, 2, enum_1.eMealPlan.dinner, new Date("2021-12-3"), "11.20", "12.20", (0, functions_1.generateToken)(), 5, enum_1.eBookingStatus.pending);
+const objBooking3 = new Booking_1.Booking(3, 2, 2, enum_1.eMealPlan.dinner, new Date("2021-12-1"), "11.20", "12.20", (0, functions_1.generateToken)(), 5, enum_1.eBookingStatus.pending);
 const booking1 = objBooking1.getBooking();
 const booking2 = objBooking2.getBooking();
-const arrBookings = [booking1, booking2];
+const booking3 = objBooking3.getBooking();
+const arrBookings = [booking1, booking2, booking3];
+console.log(arrBookings);
 // *------------------------------------------------------------------------------*
 // ? 1: Provide the list of restaurants in the country so that the user can choose accordingly.
 const listOfRestaurants = (arrRestaurants, countryId) => {
@@ -71,13 +75,7 @@ const acceptBooking = (arrBookings, bookingId) => {
     console.log("Booking Accepted: ", booking);
 };
 acceptBooking(arrBookings, 1);
-// ? 5: Online table reservations are done 6hrs in advance for the current date.
-// ? 6: Table reservation can be done up to one month in advance.
 // ? 7: Give a token number to the customer as an acknowledgement of booking.
 const token1 = objBooking1.getToken();
 const token2 = objBooking2.getToken();
 console.log(token1, token2);
-function generateToken() {
-    const token = Math.floor(Math.random() * 100000000);
-    return token;
-}

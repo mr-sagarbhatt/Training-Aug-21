@@ -5,6 +5,8 @@ import {
   eTableStatus,
   eBookingStatus,
 } from "./enum";
+import { generateToken, monthDiff } from "./functions";
+
 import { Customer } from "./classes/Customer";
 import { Country } from "./classes/Country";
 import { Restaurant } from "./classes/Restaurant";
@@ -81,8 +83,8 @@ const objBooking1: Booking = new Booking(
   1,
   eMealPlan.launch,
   new Date("2021-12-3"),
-  "11:20pm",
-  "12:20pm",
+  "11.20",
+  "12.20",
   generateToken(),
   5,
   eBookingStatus.pending
@@ -93,8 +95,20 @@ const objBooking2: Booking = new Booking(
   2,
   eMealPlan.dinner,
   new Date("2021-12-3"),
-  "11:20pm",
-  "12:20pm",
+  "11.20",
+  "12.20",
+  generateToken(),
+  5,
+  eBookingStatus.pending
+);
+const objBooking3: Booking = new Booking(
+  3,
+  2,
+  2,
+  eMealPlan.dinner,
+  new Date("2021-12-1"),
+  "11.20",
+  "12.20",
   generateToken(),
   5,
   eBookingStatus.pending
@@ -102,7 +116,9 @@ const objBooking2: Booking = new Booking(
 
 const booking1 = objBooking1.getBooking();
 const booking2 = objBooking2.getBooking();
-const arrBookings = [booking1, booking2];
+const booking3 = objBooking3.getBooking();
+const arrBookings = [booking1, booking2, booking3];
+console.log(arrBookings);
 
 // *------------------------------------------------------------------------------*
 // ? 1: Provide the list of restaurants in the country so that the user can choose accordingly.
@@ -140,16 +156,7 @@ const acceptBooking = (arrBookings, bookingId): void => {
 };
 acceptBooking(arrBookings, 1);
 
-// ? 5: Online table reservations are done 6hrs in advance for the current date.
-
-// ? 6: Table reservation can be done up to one month in advance.
-
 // ? 7: Give a token number to the customer as an acknowledgement of booking.
 const token1 = objBooking1.getToken();
 const token2 = objBooking2.getToken();
 console.log(token1, token2);
-
-function generateToken(): number {
-  const token = Math.floor(Math.random() * 100000000);
-  return token;
-}

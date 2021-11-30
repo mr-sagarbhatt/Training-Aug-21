@@ -1,5 +1,6 @@
 import { iBooking } from "../interfaces";
 import { eMealPlan, eBookingStatus } from "../enum";
+import { monthDiff } from "../functions";
 
 // * Booking
 class Booking implements iBooking {
@@ -19,18 +20,26 @@ class Booking implements iBooking {
   }
 
   getBooking() {
-    return {
-      id: this.id,
-      tableId: this.tableId,
-      customerId: this.customerId,
-      mealPlan: eMealPlan[this.mealPlan],
-      date: this.date,
-      fromTime: this.fromTime,
-      toTime: this.toTime,
-      token: this.token,
-      noOfPersons: this.noOfPersons,
-      status: eBookingStatus[this.status],
-    };
+    if (this.date > new Date()) {
+      if (monthDiff(new Date(), this.date) <= 1) {
+        return {
+          id: this.id,
+          tableId: this.tableId,
+          customerId: this.customerId,
+          mealPlan: eMealPlan[this.mealPlan],
+          date: this.date,
+          fromTime: this.fromTime,
+          toTime: this.toTime,
+          token: this.token,
+          noOfPersons: this.noOfPersons,
+          status: eBookingStatus[this.status],
+        };
+      } else {
+        throw new Error("Can book table within 1 month only!");
+      }
+    } else {
+      throw new Error("Please enter proper date");
+    }
   }
 
   getToken() {
