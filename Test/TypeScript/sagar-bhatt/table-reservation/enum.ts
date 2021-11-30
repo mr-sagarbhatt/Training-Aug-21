@@ -22,7 +22,7 @@ enum eTableStatus {
 }
 
 enum eBookingStatus {
-  reserved = 1,
+  accepted = 1,
   pending = 2,
   canceled = 3,
 }

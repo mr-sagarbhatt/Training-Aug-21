@@ -30,7 +30,7 @@ var eTableStatus;
 exports.eTableStatus = eTableStatus;
 var eBookingStatus;
 (function (eBookingStatus) {
-    eBookingStatus[eBookingStatus["reserved"] = 1] = "reserved";
+    eBookingStatus[eBookingStatus["accepted"] = 1] = "accepted";
     eBookingStatus[eBookingStatus["pending"] = 2] = "pending";
     eBookingStatus[eBookingStatus["canceled"] = 3] = "canceled";
 })(eBookingStatus || (eBookingStatus = {}));

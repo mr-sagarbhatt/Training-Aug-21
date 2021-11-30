@@ -6,8 +6,8 @@ import {
   eBookingStatus,
 } from "./enum";
 
-// * Person
-interface iPerson {
+// * Customer
+interface iCustomer {
   id: Number;
   firstName: string;
   lastName: string;
@@ -17,22 +17,10 @@ interface iPerson {
   nationality: string;
 }
 
-// * Customer
-interface iCustomer extends iPerson {
-  getCustomer?: () => void;
-}
-
-// * Employee
-// interface iEmployee extends iPerson {
-//   restaurantId: number;
-//   getEmployee?: () => void;
-// }
-
 // * Country
 interface iCountry {
   id: number;
   countryName: string;
-  getCountry?: () => void;
 }
 
 // * Restaurant
@@ -41,7 +29,6 @@ interface iRestaurant {
   name: string;
   location: string;
   countryId: number;
-  getRestaurant?: () => void;
 }
 
 // * Room
@@ -49,16 +36,14 @@ interface iRoom {
   id: number;
   restaurantId: number;
   room: eRoom;
-  GetRoom?: () => void;
 }
 
 // * Table
 interface iTable {
   id: number;
   roomId: number;
-  type: eMealPlan;
   status: eTableStatus;
-  GetDiningTimes?: () => void;
+  noOfPersons: number;
 }
 
 // * Booking:
@@ -73,16 +58,6 @@ interface iBooking {
   token: number;
   noOfPersons: number;
   status: eBookingStatus;
-  getBookings?: () => void;
 }
 
-export {
-  iPerson,
-  // iEmployee,
-  iCustomer,
-  iCountry,
-  iRestaurant,
-  iRoom,
-  iTable,
-  iBooking,
-};
+export { iCustomer, iCountry, iRestaurant, iRoom, iTable, iBooking };
