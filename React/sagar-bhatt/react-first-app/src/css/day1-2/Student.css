@@ -1,0 +1,69 @@
+.student {
+  display: grid;
+  gap: 20px;
+}
+.title {
+  color: #28293c;
+  text-align: center;
+  margin: 2rem;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.student-id-card {
+  display: flex;
+  flex-flow: column wrap;
+  /* width: 17rem; */
+  padding: 1rem;
+  /* margin: 2rem 0; */
+  border: 1px solid rgba(20, 20, 20, 0.3);
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: #ebebeb;
+  transition: all 0.3s linear;
+}
+
+.student-id-card:hover {
+  box-shadow: 2px 5px 10px rgba(20, 20, 20, 0.3);
+}
+
+.student-id-card img {
+  border-radius: 50%;
+  border: 0.1rem solid #28293c;
+  margin: 1rem auto;
+}
+
+.student-id-card p {
+  text-transform: capitalize;
+  color: #202020;
+  font-weight: 500;
+  font-size: large;
+  margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .student {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .student {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    font-size: xx-large;
+  }
+  .student {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .student {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
