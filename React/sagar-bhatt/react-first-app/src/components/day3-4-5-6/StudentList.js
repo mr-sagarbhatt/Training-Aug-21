@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../css/day1-2/Student.css";
+import Button from "./Button";
 
 // * STUDENTS DATA
 import students from "./students-data";
@@ -7,15 +8,28 @@ import students from "./students-data";
 // * STUDENT LIST COMPONENT
 class StudentList extends Component {
   state = {
-    student: students,
+    students: students,
+  };
+  // * HANDLER FOR DELETE STUDENTS
+  handleDelete = (id) => {
+    const sortedData = this.state.students.filter(
+      (student) => student.id !== id
+    );
+    this.setState({
+      students: sortedData,
+    });
   };
   render() {
     return (
       <>
         {this.props.children}
         <section className='student'>
-          {this.state.student.map((item) => (
-            <StudentIdCard key={item.id} studentInfo={item} />
+          {this.state.students.map((item) => (
+            <StudentIdCard
+              key={item.id}
+              studentInfo={item}
+              handleDelete={this.handleDelete}
+            />
           ))}
         </section>
       </>
@@ -25,8 +39,16 @@ class StudentList extends Component {
 
 // * STUDENT ID CARD COMPONENT
 class StudentIdCard extends Component {
+  state = {
+    showInfo: false,
+  };
+  // * handleToggleInfo :: TOGGLE STUDENT INFO
+  handleToggleInfo = () => {
+    this.setState({
+      showInfo: !this.state.showInfo,
+    });
+  };
   render() {
-    console.log(this.props.studentInfo);
     const {
       image,
       id,
@@ -37,6 +59,7 @@ class StudentIdCard extends Component {
       address,
       collegeLogo,
     } = this.props.studentInfo;
+    const { handleDelete } = this.props;
     return (
       <article className='student-id-card'>
         <Image image={image} />
@@ -46,11 +69,22 @@ class StudentIdCard extends Component {
           lastName={lastName}
           dob={dob}
         />
-        <CollegeInfo
-          collegeName={collegeName}
-          address={address}
-          collegeLogo={collegeLogo}
-        />
+        <button type='button' className='btn' onClick={this.handleToggleInfo}>
+          Toggle Info
+        </button>
+        {this.state.showInfo ? (
+          <CollegeInfo
+            id={id}
+            collegeName={collegeName}
+            address={address}
+            collegeLogo={collegeLogo}
+            handleDelete={handleDelete}
+          />
+        ) : null}
+        {/* <button type='button' className='btn' onClick={this.handleToggleInfo}>
+          Toggle Info
+        </button>
+        {this.state.showInfo ? <p>Student Info</p> : null} */}
       </article>
     );
   }
@@ -89,12 +123,13 @@ class PersonalInfo extends Component {
 // * COLLEGE INFO COMPONENT
 class CollegeInfo extends Component {
   render() {
-    const { collegeName, address, collegeLogo } = this.props;
+    const { id, collegeName, address, collegeLogo, handleDelete } = this.props;
     return (
       <div>
         <p>collegeName: {collegeName}</p>
         <p>collegeAddress: {address}</p>
         <Image image={collegeLogo} />
+        <Button id={id} handleDelete={handleDelete} />
       </div>
     );
   }
