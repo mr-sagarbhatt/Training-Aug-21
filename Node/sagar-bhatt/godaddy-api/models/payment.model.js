@@ -6,9 +6,9 @@ const AutoIncrement = AutoIncrementFactory(connection);
 const paymentSchema = new Schema(
   {
     _id: Number,
-    code: {
-      type: String,
-      requireD: true,
+    amount: {
+      type: Number,
+      required: true,
     },
     type: {
       type: String,
@@ -18,13 +18,9 @@ const paymentSchema = new Schema(
       type: String,
       required: true,
     },
-    status: {
-      type: String,
-      required: true,
-    },
-    subscriptionDetailId: {
+    orderDetailId: {
       type: Number,
-      ref: "subscriptionDetail",
+      ref: "orderDetail",
       required: true,
     },
   },

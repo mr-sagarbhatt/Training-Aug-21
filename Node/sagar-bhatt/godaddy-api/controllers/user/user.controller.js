@@ -25,12 +25,30 @@ class UserController {
     const userDomain = new UserDomain();
     userDomain.loginUser(req, res);
   }
+  // * DELETE USER
+  static deleteUser(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.deleteUser(req, res);
+  }
 }
 
 // * USERS ROUTES
 router.post("/", UserController.registerUser);
 router.post("/login", UserController.loginUser);
 router.get("/", verifyToken, authPage([1]), UserController.getAllUsers);
-router.get("/:userId", verifyToken, authPage([1]), UserController.getUser);
+router.get(
+  "/:userId",
+  verifyToken,
+  authPage([1, 2]),
+  // authUser,
+  UserController.getUser
+);
+router.delete(
+  "/:userId",
+  verifyToken,
+  // authUser,
+  authPage([1, 2]),
+  UserController.deleteUser
+);
 
 module.exports = router;

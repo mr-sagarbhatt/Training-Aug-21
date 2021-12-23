@@ -3,18 +3,19 @@ const AutoIncrementFactory = require("mongoose-sequence");
 
 const AutoIncrement = AutoIncrementFactory(connection);
 
-const subscriptionItemSchema = new Schema(
+const orderItemSchema = new Schema(
   {
     _id: Number,
     productId: {
       type: Number,
       ref: "product",
-    },
-    productPrice: {
-      type: Number,
       required: true,
     },
     months: {
+      type: Number,
+      required: true,
+    },
+    productPrice: {
       type: Number,
       required: true,
     },
@@ -24,18 +25,23 @@ const subscriptionItemSchema = new Schema(
     endTime: {
       type: Date,
     },
-    subscriptionDetailId: {
+    // status: {
+    //   type: String,
+    //   required: true,
+    // },
+    orderDetailId: {
       type: Number,
-      ref: "subscriptionDetail",
+      ref: "orderDetail",
+      required: true,
     },
   },
   { timestamps: true }
 );
 
-subscriptionItemSchema.plugin(AutoIncrement, {
-  id: "subscriptionItem_seq",
+orderItemSchema.plugin(AutoIncrement, {
+  id: "orderItem_seq",
 });
 
-const SubscriptionItemModel = model("subscriptionItem", subscriptionItemSchema);
+const OrderItemModel = model("orderItem", orderItemSchema);
 
-module.exports = SubscriptionItemModel;
+module.exports = OrderItemModel;

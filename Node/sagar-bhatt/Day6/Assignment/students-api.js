@@ -1,4 +1,5 @@
 require("dotenv").config({ path: "../.env" });
+const cors = require("cors"); // * allow to send the request to the API server.
 const chalk = require("chalk");
 const express = require("express");
 const Joi = require("joi");
@@ -8,9 +9,16 @@ const studentsList = require("./json/students.json");
 const students = studentsList.Students;
 const studentsPath = "./json/students.json";
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
+
+// * allow only port 3000 to access resources
+app.options(
+  "*",
+  cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 })
+);
+app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
 
 function validateSubject(subject) {
   const joiSchema = Joi.object({
@@ -25,7 +33,7 @@ async function updateStudent(path, students) {
 // * ROUTES
 app.get("/", (req, res) => {
   res.send(
-    `<h3>Students REST API!!</h3><a href="http://localhost:3000/students">http://localhost:3000/students</a>`
+    `<h3>Students REST API!!</h3><a href="http://localhost:3001/students">http://localhost:3001/students</a>`
   );
 });
 
@@ -110,6 +118,33 @@ app.put("/students/:id/result/eng", (req, res) => {
       console.log(chalk.blue(JSON.stringify(student)));
       res.send(student);
     }
+  }
+});
+
+// * 6 Create Student
+app.post("/students", (req, res) => {
+  const data = {
+    ...req.body,
+    ID: students.length + 1,
+  };
+  students.push(data);
+  updateStudent(studentsPath, studentsList);
+  res.send(students);
+});
+
+// * 7 Delete Student
+app.delete("/students/:id", (req, res) => {
+  const student = students.find((elem) => elem.ID === parseInt(req.params.id));
+  if (!student) {
+    res.status(404).send({
+      status: 404,
+      message: "Student Not Found",
+    });
+  } else {
+    const index = students.indexOf(student);
+    students.splice(index, 1);
+    updateStudent(studentsPath, studentsList);
+    res.send(students);
   }
 });
 

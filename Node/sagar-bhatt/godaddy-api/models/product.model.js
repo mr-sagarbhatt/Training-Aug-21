@@ -15,22 +15,31 @@ const productSchema = new Schema(
       type: String,
       alias: "description",
     },
+    extras: {
+      type: Array,
+    },
     price: {
       type: Number,
       required: true,
       alias: "pricePerMonth",
+      min: 0,
+    },
+    discountId: {
+      type: Number,
+      ref: "discount",
+    },
+    featured: {
+      type: Boolean,
+      default: 0,
     },
     subCategoryId: {
       type: Number,
       ref: "subCategory",
       required: true,
     },
-    discountId: {
-      type: Number,
-      ref: "discount",
-    },
     isActive: {
       type: Boolean,
+      required: true,
       default: 1,
     },
   },

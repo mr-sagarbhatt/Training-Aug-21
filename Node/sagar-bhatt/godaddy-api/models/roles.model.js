@@ -11,6 +11,8 @@ const roleSchema = new Schema(
       lowercase: true,
       required: true,
       unique: true,
+      // trim: true,
+      // enum: ["admin", "user"],
     },
   },
   { timestamps: true }

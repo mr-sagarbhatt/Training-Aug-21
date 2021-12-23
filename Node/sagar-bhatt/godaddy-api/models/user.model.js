@@ -36,9 +36,11 @@ const userSchema = new Schema(
       type: Number,
       ref: "role",
       required: true,
+      // default: 2,
     },
     isActive: {
       type: Boolean,
+      required: true,
       default: 1,
     },
   },

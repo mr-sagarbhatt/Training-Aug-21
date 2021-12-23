@@ -34,6 +34,27 @@ class UserDomain {
     }
   }
 
+  // * DELETE USER
+  async deleteUser(req, res) {
+    try {
+      const _id = parseInt(req.params.userId);
+      const user = await UserModel.findByIdAndUpdate(
+        { _id },
+        { $set: { isActive: 0 } },
+        { new: 1 }
+      ).populate("role", "role -_id");
+      if (user) {
+        res.send(user);
+      } else {
+        res.status(400).json({
+          message: "User Not Found!",
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   // * REGISTER USER
   async registerUser(req, res) {
     try {

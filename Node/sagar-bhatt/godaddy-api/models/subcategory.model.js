@@ -9,13 +9,27 @@ const subCategorySchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
       alias: "subCategoryName",
+    },
+    slug: {
+      type: String,
+      required: true,
+    },
+    desc: {
+      type: String,
+    },
+    extra: {
+      type: Array,
     },
     categoryId: {
       type: Number,
       ref: "category",
       required: true,
+    },
+    isActive: {
+      type: Boolean,
+      require: true,
+      default: 1,
     },
   },
   { timestamps: true }

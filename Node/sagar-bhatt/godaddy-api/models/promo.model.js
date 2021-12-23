@@ -3,20 +3,20 @@ const AutoIncrementFactory = require("mongoose-sequence");
 
 const AutoIncrement = AutoIncrementFactory(connection);
 
-const discountSchema = new Schema(
+const promoSchema = new Schema(
   {
     _id: Number,
-    // name: {
-    //   type: String,
-    //   required: true,
-    // },
+    promoCode: {
+      type: String,
+      required: true,
+    },
     desc: {
       type: String,
       alias: "description",
     },
     percentage: {
       type: Number,
-      alias: "discountPercentage",
+      alias: "promoPercentage",
       required: true,
       min: 0,
       max: 100,
@@ -36,10 +36,10 @@ const discountSchema = new Schema(
   { timestamps: true }
 );
 
-discountSchema.plugin(AutoIncrement, {
-  id: "discount_seq",
+promoSchema.plugin(AutoIncrement, {
+  id: "promo_seq",
 });
 
-const DiscountModel = model("discount", discountSchema);
+const PromoModel = model("promo", promoSchema);
 
-module.exports = DiscountModel;
+module.exports = PromoModel;

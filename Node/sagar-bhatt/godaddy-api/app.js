@@ -26,6 +26,10 @@ async function connectDb(mongoDb) {
   }
 }
 
+// * LOGGER MIDDLEWARE
+const logger = require("./middlewares/logger");
+app.use(logger);
+
 // * ROUTES
 const usersRoutes = require("./controllers/user/user.controller");
 app.use("/users", usersRoutes);

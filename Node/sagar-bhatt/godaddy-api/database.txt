@@ -38,3 +38,26 @@ Hosting / Website Hosting | Web Hosting, Windows Hosting, Business Hosting, Dedi
 Web Security / SSL Certificates | SSL Certificates, Managed SSL Service, EV SSL Certificates, OV SSL Certificates, DV SSL Certificates, SAN SSL Certificate, Wildcard SSL Certificates
 
 Websites / WordPress | WordPress Websites, WordPress Themes
+
+-----------------------------------------------------------------------
+
+Role ::
+    _id, role
+
+Discount ::
+    _id, name, desc, discountPercent, isActive
+
+User ::
+    _id, userName, email, password, role, isActive
+
+Profile ::
+    _id, firstName, lastName, organization, defaultCurrency, primaryPhone, mobilePhone, homePhone, fax, country, address, address2, postalCode, city, state, user
+
+Category ::
+    _id, name
+
+SubCategory ::
+    _id, name, categoryId
+
+Product ::
+    _id, name, desc, price, subCategoryId, discountId, isActive

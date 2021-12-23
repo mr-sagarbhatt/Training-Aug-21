@@ -12,6 +12,22 @@ const categorySchema = new Schema(
       unique: true,
       alias: "categoryName",
     },
+    slug: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+    desc: {
+      type: String,
+    },
+    extra: {
+      type: Array,
+    },
+    isActive: {
+      type: Boolean,
+      require: true,
+      default: 1,
+    },
   },
   { timestamps: true }
 );
