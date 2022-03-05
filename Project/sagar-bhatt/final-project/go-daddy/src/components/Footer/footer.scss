@@ -1,0 +1,264 @@
+@import "../../index.scss";
+
+.footer {
+  background-color: $black;
+}
+
+// .text-banner
+.text-banner {
+  padding: 1rem 0;
+  background-color: #1bdbdb;
+  font-size: 1.4rem;
+
+  p {
+    margin: 1rem 0;
+    text-align: center;
+  }
+}
+
+// .above-footer-menu
+.above-footer-menu {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 4vw;
+  background-color: $black;
+
+  .guides-link {
+    padding: 4vh 0 4vh 2vw;
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: $gray-500;
+    }
+    .logo {
+      display: inline-block;
+
+      img {
+        vertical-align: middle;
+        height: auto;
+        max-width: 100%;
+      }
+      img.guides-logo {
+        padding-right: 1rem;
+        height: 100%;
+        max-width: 60%;
+      }
+      img.care-arrow {
+        height: 100%;
+        max-width: 22%;
+      }
+    }
+  }
+}
+
+// .footer-menu
+.footer-menu {
+  padding: 4vh 4vw;
+  border-top: 1px solid $gray-700;
+  background-color: $black;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul li {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .menu {
+    .menu-item {
+      padding-bottom: 3vh;
+      color: $white;
+      font-weight: bold;
+    }
+
+    .heading.collapsed::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f067";
+      font-size: 0.7rem;
+      float: right;
+      vertical-align: middle;
+      font-weight: 900;
+    }
+
+    .heading::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f068";
+      font-size: 0.7rem;
+      float: right;
+      vertical-align: middle;
+      font-weight: 900;
+    }
+
+    .submenu {
+      a {
+        color: #bac0c3;
+        font-size: 0.8rem;
+        font-weight: normal;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .footer-menu {
+    ul li {
+      min-width: 50%;
+      padding: 0 0.5%;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: wrap;
+
+      .heading {
+        display: block;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 700;
+      }
+
+      .heading.collapsed::after,
+      .heading::after {
+        display: none;
+        display: none;
+      }
+
+      .submenu {
+        display: list-item;
+      }
+
+      .submenu.collapsing {
+        transition: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .footer-menu {
+    ul li {
+      min-width: unset;
+    }
+  }
+}
+
+// .footer-controls
+.logo {
+  grid-area: ll;
+}
+.hr {
+  grid-area: hr;
+}
+.social-media {
+  grid-area: sm;
+}
+
+.footer-controls {
+  display: grid;
+  background-color: $black;
+  grid-template-areas:
+    "ll ll ll"
+    "hr hr hr"
+    "sm sm sm";
+
+  .hr {
+    background-color: $gray-500;
+  }
+
+  .logo {
+    padding: 0 4vw;
+    img {
+      width: 10.375rem;
+      height: 4.125rem;
+    }
+  }
+  .social-media {
+    padding: 0 4vw;
+    display: grid;
+    grid-template-areas: "sm sm sm";
+    justify-items: center;
+    i {
+      font-size: 2rem;
+      color: $white;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-areas:
+      "hr hr hr"
+      "ll sm sm";
+
+    .social-media {
+      justify-content: end;
+      gap: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-areas:
+      "ll sm sm"
+      "hr hr hr";
+  }
+}
+
+// .footer-legal
+.legal-menu {
+  grid-area: lm;
+}
+.copyright {
+  grid-area: cp;
+}
+.tos {
+  grid-area: tos;
+}
+
+.footer-legal {
+  @include block-spacer(0, 0, 4vw);
+
+  display: grid;
+  grid-template-areas:
+    "lm lm lm lm"
+    "cp cp cp cp"
+    "tos tos tos tos";
+  gap: 1.25rem;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
+  font-size: 0.8rem;
+  text-align: center;
+  color: $white;
+  background-color: $black;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    gap: 1.25rem;
+  }
+  a {
+    color: $gray-500;
+    text-decoration: none;
+
+    &:hover {
+      color: $gray-500;
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-areas: "cp lm" "tos .";
+    text-align: start;
+  }
+}

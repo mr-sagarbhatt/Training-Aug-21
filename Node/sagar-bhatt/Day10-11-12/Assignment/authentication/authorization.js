@@ -13,7 +13,6 @@ const authPage = (permissions) => {
 
 const authUser = (req, res, next) => {
   const id = parseInt(req.params.id);
-  console.log(id);
   if (req.body.userId === id) {
     next();
   } else {

@@ -1,0 +1,90 @@
+@use "../../custom" as *;
+@use "../../components/mixins" as *;
+
+.product-card-container {
+  @include block-spacer(8vh, 4vh, 4vw);
+
+  .card-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    .product-card {
+      margin: 0;
+      position: relative;
+      border: 0.0625em solid #d4dbe0;
+      padding: 2vw;
+      flex-basis: 100%;
+
+      .title {
+        font-size: 1rem;
+        margin: 1.5rem 0;
+      }
+      .content {
+        margin-bottom: 1.5rem;
+      }
+      .price-content {
+        margin-top: 1rem;
+      }
+      .price-wrapper {
+        font-weight: bold;
+        .amount {
+          font-size: 2rem;
+        }
+        .term {
+          font-weight: 500;
+          font-size: 1.4rem;
+        }
+      }
+      .sales-callout {
+        .highlight {
+          background-color: #ffeea9;
+          padding: 0.25rem 0.5rem;
+        }
+      }
+      .below-price {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #767676;
+      }
+      .btn-container {
+        display: flex;
+        margin-bottom: 0.75rem;
+        button {
+          width: 100%;
+          padding: 0.75rem 3rem;
+          margin-bottom: 0.75rem;
+        }
+      }
+      .feature-list {
+        display: flex;
+        flex-flow: column wrap;
+        ul {
+          padding-left: 0.3rem;
+          list-style-type: none;
+          border-bottom: 0.0625em solid #d4dbe0;
+
+          li {
+            margin-bottom: 1rem;
+          }
+
+          & > li::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f00c";
+            display: inline-block;
+            padding-right: 0.7rem;
+            vertical-align: middle;
+            font-weight: 600;
+            color: $teal;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        flex-basis: 50%;
+      }
+      @include media-breakpoint-up(xl) {
+        flex-basis: 25%;
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ const verifyToken = (req, res, next) => {
           message: err.message,
           expiredAt: err.expiredAt,
         };
-        console.log(errData);
+        // console.log(errData);
         return res.status(401).json({
           message: "Unauthorized Access",
         });

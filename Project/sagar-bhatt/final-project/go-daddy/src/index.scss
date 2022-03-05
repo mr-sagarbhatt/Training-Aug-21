@@ -1,0 +1,141 @@
+// *********** CUSTOM SCSS ***********
+// scss-docs-start gray-color-variables
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #111;
+$dark-cyan: #00838c;
+$light-cyan: #00a4a6;
+$light-blue: #ddeaf8;
+// scss-docs-end gray-color-variables
+
+$transition-default: all 0.3s ease-in-out;
+$transition-secondary: all 0.3s cubic-bezier(0.65, -0.01, 0.26, 1);
+$transition-transform-default: transform 0.6s cubic-bezier(0.1, 0.25, 0.3, 1);
+
+// *********** OVERRIDE BOOTSTRAP VARIABLES ***********
+$nav-link-padding-y: 0;
+$nav-link-padding-x: 0;
+$navbar-padding-y: 0;
+$navbar-padding-x: 0;
+$navbar-toggler-padding-x: 0;
+$navbar-toggler-padding-y: 0;
+$navbar-toggler-font-size: 1.7rem;
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$black}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+
+$accordion-border-width: 1px;
+$accordion-button-focus-border-color: none;
+$accordion-button-focus-box-shadow: none;
+$accordion-button-active-bg: $white;
+$accordion-button-active-color: $black;
+
+$form-floating-label-opacity: 1;
+$form-floating-input-padding-t: 1.4rem;
+$form-floating-input-padding-b: 0.3rem;
+$form-label-color: $black;
+$form-text-color: $black;
+$input-border-color: $gray-500;
+
+$form-feedback-icon-valid: none;
+$form-feedback-icon-invalid: none;
+
+// *********** GOOGLE FONTS ***********
+@font-face {
+  font-family: gdSherpa;
+  src: url(./assets//fonts/gdsherpa-vf.woff2);
+}
+@font-face {
+  font-family: gd-sage;
+  src: url(./assets/fonts/gd-sage-bold.woff2);
+  font-weight: bold;
+}
+
+$font-sans-serif: gdSherpa, Helvetica, Arial, sans-serif;
+$font-serif: gd-sage, "Times New Roman", serif;
+
+// *********** OVERRIDE GRID-BREAKPOINTS ***********
+$grid-breakpoints: (
+  xs: 0,
+  cb-520: 520px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  cb-1720: 1720px,
+);
+
+// MIXIN
+@mixin block-spacer($mt: auto, $mb: auto, $p: 4vw) {
+  width: 100%;
+  line-height: 24px;
+  padding-right: $p !important;
+  padding-left: $p !important;
+  margin-top: $mt;
+  margin-bottom: $mb;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// BUTTON
+.btn {
+  border-radius: 0 !important;
+}
+
+.btn-dark {
+  color: $white !important;
+  background-color: $black !important;
+  font-weight: bold !important;
+
+  &:hover {
+    background-color: $black !important;
+  }
+}
+
+.btn-light {
+  color: $black !important;
+  background-color: $white !important;
+  font-weight: bold !important;
+  border: 2px solid $black !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $white !important;
+    color: $black !important;
+    box-shadow: none !important;
+    border: 2px solid $black !important;
+  }
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+::selection {
+  background-color: #a6fef8 !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: $font-sans-serif !important;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $black !important;
+  position: relative;
+  min-height: calc(100vh - 2.5rem);
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+// * IMPORT BOOTSTRAP 5
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

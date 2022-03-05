@@ -1,0 +1,115 @@
+@import "../../../index.scss";
+
+.promotion-ad {
+  @include block-spacer(1rem, auto, 0);
+  padding: 0.5rem;
+
+  .img-container {
+    position: relative;
+  }
+
+  img {
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 100%;
+    width: auto;
+  }
+
+  img:hover {
+    opacity: 0.9;
+  }
+
+  .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $gray-500;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+
+    .play-icon {
+      font-size: 12px;
+    }
+
+    &:hover {
+      border-color: $black;
+    }
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(17, 17, 17, 0.7);
+  }
+
+  .modal-body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    iframe {
+      height: 50vh;
+      width: 100vw;
+
+      @include media-breakpoint-up(lg) {
+        height: 80vh;
+        width: 75vw;
+      }
+    }
+  }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+
+    .fa-times-icon {
+      font-size: 30px;
+      color: $white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+// ads
+// .ads {
+//   @include block-spacer(4rem, auto, 4vw);
+//   padding-top: 5rem;
+//   padding-bottom: 3rem;
+//   background-color: #2f1a4b;
+//   color: $white;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-items: center;
+
+//   .title {
+//     font-size: 1.5rem;
+//     font-weight: 500;
+//     padding: 2rem 0;
+//   }
+// }

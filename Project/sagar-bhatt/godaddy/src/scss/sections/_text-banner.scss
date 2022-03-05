@@ -1,0 +1,12 @@
+@use "../custom" as *;
+
+.text-banner {
+  padding: 1rem 0;
+  background-color: #1bdbdb;
+  font-size: 1.4rem;
+
+  p {
+    margin: 1rem 0;
+    text-align: center;
+  }
+}

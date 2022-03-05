@@ -1,0 +1,387 @@
+// *********** Service ***********
+
+{
+  "name": "domains",
+  "slug": "domains"
+}
+{
+  "name": "hosting",
+  "slug": "hosting"
+}
+{
+  "name": "security",
+  "slug": "security"
+}
+{
+  "name": "email & marketing",
+  "slug": "email-marketing"
+}
+
+// *********** Category ***********
+
+{
+  "name": "domains",
+  "slug": "domains",
+  "serviceId": 1
+}
+{
+  "name": "hosting",
+  "slug": "hosting",
+  serviceId: 2
+}
+{
+  "name": "ecommerce hosting",
+  "slug": "ecommerce-hosting",
+  serviceId: 2
+}
+{
+  "name": "wordpress solutions",
+  "slug": "wordpress-solutions",
+  serviceId: 2
+}
+{
+  "name": "servers",
+  "slug": "servers",
+  serviceId: 2
+}
+{
+  "name": "ssl certificates",
+  "slug": "ssl-certificates",
+  "serviceId": 3
+}
+{
+  "name": "web security",
+  "slug": "web-security",
+  "serviceId": 3
+}
+{
+  "name": "email",
+  "slug": "email",
+  "serviceId": 4
+}
+{
+  "name": "marketing apps & services",
+  "slug": "online-marketing",
+  "serviceId": 4
+}
+
+// *********** Sub Category ***********
+
+{
+  "name": "Domain Name Search",
+  "slug": "domain-name-search",
+  "categoryId": 1
+}
+{
+  "name": "Transfer Domain Names",
+  "slug": "transfer-domain-names",
+  "categoryId": 1
+}
+{
+  "name": "Privacy & Protection for Domains",
+  "slug": "privacy-protection-for-domains",
+  "categoryId": 1
+}
+{
+  "name": "WHOIS",
+  "slug": "whois",
+  "categoryId": 1
+}
+{
+  "name": "Auctions for Domain Names",
+  "slug": "auctions-for-domain-names",
+  "categoryId": 1
+}
+{
+  "name": "Appraise Domain Name Value",
+  "slug": "appraise-domain-name-value",
+  "categoryId": 1
+}
+{
+  "name": "Investing in Domains",
+  "slug": "investing-in-domains",
+  "categoryId": 1
+}
+{
+  "name": "Premium DNS",
+  "slug": "premium-dns",
+  "categoryId": 1
+}
+
+{
+  "name": "Web Hosting",
+  "slug": "web-hosting",
+  "categoryId": 2
+}
+{
+  "name": "Business Hosting",
+  "slug": "business-hosting",
+  "categoryId": 2
+}
+{
+  "name": "GoDaddy Website Builder",
+  "slug": "godaddy-website-builder",
+  "categoryId": 2
+}
+
+{
+  "name": "Managed WordPress Ecommerce",
+  "slug": "managed-wordpress-ecommerce",
+  "categoryId": 3
+}
+{
+  "name": "GoDaddy Online Store Builder",
+  "slug": "godaddy-online-store-builder",
+  "categoryId": 3
+}
+
+{
+  "name": "WordPress Hosting",
+  "slug": "wordpress-hosting",
+  "categoryId": 4
+}
+{
+  "name": "Managed WordPress Pro",
+  "slug": "managed-wordpress-pro",
+  "categoryId": 4
+}
+{
+  "name": "WP Premium Support",
+  "slug": "wp-premium-support",
+  "categoryId": 4
+}
+
+{
+  "name": "VPS Hosting",
+  "slug": "vps-hosting",
+  "categoryId": 5
+}
+{
+  "name": "VPS - Fully Managed",
+  "slug": "vps-fully-managed",
+  "categoryId": 5
+}
+{
+  "name": "Dedicated Server",
+  "slug": "dedicated-server",
+  "categoryId": 5
+}
+{
+  "name": "Dedicated Server - Fully Managed",
+  "slug": "dedicated-server-fully-managed",
+  "categoryId": 5
+}
+{
+  "name": "Reseller (WHMCS) Hosting",
+  "slug": "reseller-hosting",
+  "categoryId": 5
+}
+
+{
+  "name": "DV SSL Certificate",
+  "slug": "dv-ssl-certificate",
+  "categoryId": 6
+}
+{
+  "name": "EV SSL Certificate",
+  "slug": "ev-ssl-certificate",
+  "categoryId": 6
+}
+{
+  "name": "SAN SSL",
+  "slug": "san-ssl",
+  "categoryId": 6
+}
+{
+  "name": "Wildcard SSL",
+  "slug": "wildcard-ssl",
+  "categoryId": 6
+}
+{
+  "name": "Managed SSL Service",
+  "slug": "managed-ssl-service",
+  "categoryId": 6
+}
+
+{
+  "name": "Backups",
+  "slug": "backups",
+  "categoryId": 7
+}
+{
+  "name": "Complete Website Security",
+  "slug": "complete-website-security",
+  "categoryId": 7
+}
+
+{
+  "name": "Email & Office 365",
+  "slug": "email-Office-365",
+  "categoryId": 8
+}
+
+{
+  "name": "Email Marketing",
+  "slug": "email-marketing",
+  "categoryId": 9
+}
+{
+  "name": "Digital Marketing Suite",
+  "slug": "digital-marketing-suite",
+  "categoryId": 9
+}
+{
+  "name": "SEO Services",
+  "slug": "seo-services",
+  "categoryId": 9
+}
+{
+  "name": "Content & Photo Creator",
+  "slug": "content-photo-creator",
+  "categoryId": 9
+}
+
+// *********** Product ***********
+
+{
+  "name": "Starter",
+  "price": 99,
+  "subCategoryId": 9,
+  "desc": "Low-cost affordable hosting to get you started.",
+  "extras": [
+    "512 MB RAM",
+    "1 website",
+    "Unmetered bandwidth",
+    "30 GB storage",
+    "1 database",
+    "Free 1-click WordPress install"
+  ]
+}
+{
+  "name": "Economy",
+  "price": 199,
+  "subCategoryId": 9,
+  "desc": "An economical, 100 GB plan with matching domain and email (with terms of 12/mo. or longer).",
+  "extras": [
+    "Standard Performance",
+    "1 website",
+    "100 GB storage",
+    "10 databases",
+    "Unmetered bandwidth",
+    "Free 1-click WordPress install"
+  ]
+}
+{
+  "name": "Deluxe",
+  "price": 299,
+  "subCategoryId": 9,
+  "desc": "Unlimited sites with unlimited storage with matching domain and email (with terms of 12/mo. or longer).",
+  "extras": [
+    "Standard Performance",
+    "Unlimited websites",
+    "Unlimited storage",
+    "25 databases",
+    "Unmetered bandwidth",
+    "Free 1-click WordPress install"
+  ]
+}
+{
+  "name": "Ultimate",
+  "price": 449,
+  "subCategoryId": 9,
+  "desc": "Increased processing power with unlimited sites, storage and databases, plus a matching domain, email and 1 SSL (with terms of 12/mo. or longer).",
+  "extras": [
+    "Increased processing power",
+    "Unlimited websites",
+    "Unlimited storage",
+    "Unlimited databases",
+    "Unmetered bandwidth",
+    "Free 1-click WordPress install"
+  ]
+}
+
+{
+  "name": "Launch",
+  "price": 1159,
+  "subCategoryId": 10,
+  "desc": "For multiple basic sites.",
+  "extras": [
+    "100 GB storage^",
+    "4 GB RAM",
+    "2 CPUs",
+    "Unmetered traffic",
+    "50 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ]
+}
+{
+  "name": "Enhance",
+  "price": 1759,
+  "subCategoryId": 10,
+  "desc": "For high-traffic WordPress, Joomla and other sites.",
+  "extras": [
+    "200 GB storage^",
+    "8 GB RAM",
+    "4 CPUs",
+    "Unmetered traffic",
+    "100 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ]
+}
+{
+  "name": "Grow",
+  "price": 2239,
+  "subCategoryId": 10,
+  "desc": "For advanced ecommerce sites like Magento.",
+  "extras": [
+    "300 GB storage^",
+    "16 GB RAM",
+    "8 CPUs",
+    "Unmetered traffic",
+    "150 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ]
+}
+{
+  "name": "Expand",
+  "price": 3199,
+  "subCategoryId": 10,
+  "desc": "For photography or resource-heavy sites.",
+  "extras": [
+    "400 GB storage^",
+    "32 GB RAM",
+    "16 CPUs",
+    "Unmetered traffic",
+    "200 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ]
+}
+
+
+// *********** Discount ***********
+
+{
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 1
+}
+{
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 1
+}
+{
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 1
+}

@@ -1,0 +1,72 @@
+@import "../../../../index.scss";
+
+.my-profile {
+  background-color: #f5f7f8;
+  @include block-spacer(0, 4vh, 4vw);
+  padding-bottom: 3rem;
+
+  &-title {
+    font-size: 2.2rem;
+    line-height: 2.75rem;
+    padding: 3rem 0.25rem 1.5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.8rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  &-card {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .personal-info {
+      order: 2;
+      @include media-breakpoint-up(md) {
+        order: 1;
+      }
+    }
+    .contact-info {
+      order: 3;
+      @include media-breakpoint-up(md) {
+        order: 2;
+      }
+    }
+    .address-info {
+      order: 4;
+      @include media-breakpoint-up(md) {
+        order: 3;
+      }
+    }
+    .edit-btn {
+      color: $dark-cyan;
+      order: 1;
+      align-self: flex-end;
+      cursor: pointer;
+      @include media-breakpoint-up(md) {
+        order: 4;
+        align-self: flex-start;
+      }
+    }
+    .info-label {
+      color: #767676;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .info-text {
+      margin-bottom: 1rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      background-color: $white;
+      padding: 20px;
+    }
+  }
+}

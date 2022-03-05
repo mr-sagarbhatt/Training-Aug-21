@@ -1,45 +1,31 @@
-const chalk = require("chalk");
-const express = require("express");
-require("dotenv").config();
-const port = process.env.PORT || 3000;
-
-const app = express();
-app.use(express.json());
-app.listen(port, () => {
-  console.log(chalk.blue(`Server started on port:${port}`));
-});
-
-// * JWT CONFIGURATION
-global.config = require("./authentication/global.config");
-
-// * MONGODB CONNECTION
-const { connect } = require("mongoose");
-const mongoDb = process.env.DATABASE;
-connectDb(mongoDb);
-
-async function connectDb(mongoDb) {
-  try {
-    await connect(mongoDb);
-    console.log(chalk.magenta(`MongoDb Connected!`));
-  } catch (err) {
-    console.log(chalk.red(err));
-  }
-}
-
-// * LOGGER MIDDLEWARE
+const port = process.env.PORT || 3001;
 const logger = require("./middlewares/logger");
+
+const express = require("express");
+const app = express();
+
+// *********** logging :: winston ***********
+const { handleLogging, serverLogging } = require("./startup/logging");
+handleLogging();
+
+// *********** CONFIG :: cors, roles ***********
+require("./startup/config")(app);
+
+// *********** LOGGER MIDDLEWARE :: ENDPOINT ***********
 app.use(logger);
 
-// * ROUTES
-const usersRoutes = require("./controllers/user/user.controller");
-app.use("/users", usersRoutes);
+// *********** ROUTES ***********
+require("./startup/routes")(app);
 
-// * CREATE ROLES
-const { createRole } = require("./utils/functions");
+// *********** DB :: MONGOOSE CONNECTION ***********
+require("./startup/db")();
 
-// createRole({
-//   role: "admin",
-// });
-// createRole({
-//   role: "user",
-// });
+// *********** MODELS :: CREATED ON LOAD IF NOT EXISTS :: roles, authTypes ***********
+require("./startup/models")();
+
+// *********** PORT ***********
+app.listen(port, () => {
+  serverLogging.info(`Server started on port:${port}`);
+});
+
+module.exports = app;

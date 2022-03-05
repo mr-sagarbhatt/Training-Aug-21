@@ -1,0 +1,12 @@
+@import "../../index.scss";
+
+.signup {
+  a {
+    color: $dark-cyan !important;
+    text-decoration: underline !important;
+    &:hover {
+      color: $light-cyan !important;
+      cursor: pointer !important;
+    }
+  }
+}

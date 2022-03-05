@@ -1,0 +1,52 @@
+@import "../../../../index.scss";
+
+.cart-header {
+  height: 62px;
+  padding: 9px;
+  display: flex;
+
+  .logo-container {
+    display: flex;
+    .logo {
+      display: none;
+      height: 35px !important;
+      width: 166px !important;
+    }
+    .icon {
+      height: 48px !important;
+      width: 50px !important;
+    }
+
+    a {
+      color: $black;
+      &:hover {
+        color: $black;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      position: relative;
+
+      .icon {
+        display: none;
+      }
+      .logo {
+        display: flex;
+      }
+      .country-name {
+        font-size: 0.625rem;
+        position: absolute;
+        left: 145px;
+        display: flex !important;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include block-spacer(0, 0, 4vw);
+      .country-name {
+        padding-left: 4vw;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../index.scss";
+
+.signin {
+  background: #f5f6f7;
+  min-height: 95vh;
+  margin-top: -2.5rem;
+  padding-top: 2.5rem;
+
+  a {
+    color: $dark-cyan !important;
+    &:hover {
+      color: $light-cyan !important;
+      cursor: pointer !important;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    background: url("https://drive.google.com/uc?export=view&id=1sFOdG8yit7eqJTxIwLoVruAFCLAZSDth")
+      no-repeat center fixed;
+    background-size: 100vw;
+  }
+}
+.signin-copyrights {
+  padding-top: 4.5rem;
+}

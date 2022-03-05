@@ -1,0 +1,61 @@
+@import "../../../index.scss";
+
+.sign-in-form {
+  input {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-bottom: 1rem !important;
+
+    &:focus {
+      outline: 1.7px solid rgba($primary, 1) !important;
+    }
+  }
+
+  a {
+    color: $dark-cyan !important;
+    &:hover {
+      color: $light-cyan !important;
+      cursor: pointer !important;
+    }
+  }
+
+  .invalid-feedback {
+    display: block;
+    font-size: 14px;
+    margin-top: -1rem;
+    padding-bottom: 1rem;
+
+    &:first-child {
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  .password {
+    position: relative;
+  }
+
+  .password-show {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $dark-cyan;
+  }
+
+  .btn-submit {
+    font-weight: 500 !important;
+
+    button {
+      border-radius: 0;
+      display: inline-block;
+      margin-top: 1rem !important;
+      margin-bottom: 0.5rem !important;
+      background-color: $black;
+
+      &:hover {
+        background-color: rgba($black, 0.8);
+      }
+    }
+  }
+}

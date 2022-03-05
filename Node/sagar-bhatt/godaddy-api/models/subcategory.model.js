@@ -8,23 +8,39 @@ const subCategorySchema = new Schema(
     _id: Number,
     name: {
       type: String,
-      required: true,
       alias: "subCategoryName",
+      maxlength: [
+        50,
+        `SubCategory name must be less than or equal to 50 characters.`,
+      ],
+      unique: [true, `SubCategory name is already exists.`],
+      required: [true, `SubCategory name is required.`],
     },
     slug: {
       type: String,
       required: true,
+      maxlength: [
+        50,
+        `SubCategory slug must be less than or equal to 50 characters.`,
+      ],
+      unique: [true, `SubCategory slug is already exists.`],
+      required: [true, `SubCategory slug is required.`],
     },
     desc: {
       type: String,
+      maxlength: [
+        1024,
+        `Description must be less than or equal to 1024 characters.`,
+      ],
+      alias: "description",
     },
     extra: {
-      type: Array,
+      type: [String],
     },
     categoryId: {
       type: Number,
       ref: "category",
-      required: true,
+      required: [true, `Category id is required.`],
     },
     isActive: {
       type: Boolean,

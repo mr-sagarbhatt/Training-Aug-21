@@ -1,0 +1,61 @@
+@import "../../../index.scss";
+
+.signup-card {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0.5rem 1.25rem 1.25rem;
+  // word-wrap: break-word;
+  padding-bottom: 2.5rem;
+
+  a {
+    color: $dark-cyan !important;
+    &:hover {
+      color: $light-cyan !important;
+      cursor: pointer !important;
+    }
+  }
+
+  .title {
+    margin-top: 0.75rem;
+    font-size: 1.8rem;
+    font-family: "Times New Roman";
+    font-weight: bold;
+  }
+  .signin-link {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .privacy {
+    font-size: 13px;
+    line-height: 1.5rem;
+  }
+
+  // * min-width: 520px
+  @include media-breakpoint-up(cb-520) {
+    margin: 0 auto;
+    width: 67vw;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 50vw;
+    border-radius: 2px;
+    border: 1px solid $gray-400;
+    padding: 40px 66px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 547px;
+    margin-top: 2.5rem;
+    .title {
+      font-size: 2.3rem;
+    }
+  }
+
+  @include media-breakpoint-up(cb-1720) {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+}

@@ -1,7 +1,9 @@
 const RoleModel = require("../models/roles.model");
 const UserModel = require("../models/user.model");
+const AuthTypeModel = require("../models/auth.type.model");
+const { serverLogging } = require("../startup/logging");
 
-// * GET USER
+// *********** GET USER FROM USER_ID ***********
 async function getUser(id) {
   try {
     const user = await UserModel.findById(id);
@@ -9,53 +11,80 @@ async function getUser(id) {
       return user;
     }
   } catch (err) {
-    console.log(err);
+    serverLogging.error(err);
   }
 }
 
-// * GET LATEST USER ID
-// async function getLatestUserId(model) {
-//   try {
-//     const id = await model.findOne().sort({ _id: -1 }).limit(1);
-//     if (!id) {
-//       return 0;
-//     }
-//     return id._id;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-
-// * CREATE ROLE
-async function createRole(data) {
+// *********** CREATE ROLE ***********
+async function createRole({ role }) {
   try {
-    const role = new RoleModel(data);
-    const result = await role.save();
-    console.log(result);
+    const result = await RoleModel.findOne({ role });
+    if (!result) {
+      const useRole = new RoleModel({ role });
+      const result = await useRole.save();
+      console.log(result);
+    }
   } catch (err) {
-    console.log(err);
+    serverLogging.error(err);
   }
 }
 
-// * GET USER ROLE
+// *********** CREATE AUTH TYPE ***********
+async function createAuthType({ authType }) {
+  try {
+    const result = await AuthTypeModel.findOne({ authType });
+    if (!result) {
+      const auth = new AuthTypeModel({ authType });
+      const result = await auth.save();
+      console.log(result);
+    }
+  } catch (err) {
+    serverLogging.error(err);
+  }
+}
+
+// *********** GET USER_ROLE FROM ROLE_ID ***********
 async function getRoleId(userRole) {
   try {
-    const result = await RoleModel.findOne({ role: userRole });
+    const result = await RoleModel.findOne({ roleId: userRole });
     if (result) {
       return parseInt(result._id);
     }
   } catch (err) {
-    console.log(err.message);
+    serverLogging.error(err);
   }
 }
 
-// * GENERATE RANDOM NUMBER
-function getRandomNumber() {
+// *********** GENERATE RANDOM NUMBER ***********
+async function getRandomNumber() {
   try {
     return Math.floor(Math.random() * 1000000000);
   } catch (err) {
-    console.log(err);
+    serverLogging.error(err);
   }
+}
+
+// *********** GENERATE RANDOM PROMO CODE ***********
+async function getRandomPromoCode() {
+  try {
+    return Math.random().toString(36).substring(2, 12).toUpperCase();
+  } catch (err) {
+    serverLogging.error(err);
+  }
+}
+
+// *********** GENERATE ORDER NO ***********
+async function getOrderNo() {
+  try {
+    return Math.random().toString(36).substring(2, 12).toUpperCase();
+  } catch (err) {
+    serverLogging.error(err);
+  }
+}
+
+function capitalize(str) {
+  const res = str && str[0].toUpperCase() + str.slice(1).toLowerCase();
+  return res;
 }
 
 module.exports = {
@@ -63,4 +92,8 @@ module.exports = {
   getRoleId,
   getRandomNumber,
   getUser,
+  getRandomPromoCode,
+  getOrderNo,
+  capitalize,
+  createAuthType,
 };

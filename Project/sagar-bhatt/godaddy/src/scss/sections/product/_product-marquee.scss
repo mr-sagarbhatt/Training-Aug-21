@@ -1,0 +1,109 @@
+@use "../../custom" as *;
+
+.product-marquee {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+
+  .primary-card {
+    display: block;
+    grid-area: main;
+    padding: 2rem 4vw;
+    width: 100%;
+    background-image: url("../../images/product-v1.jpg");
+    padding-bottom: 10rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .title {
+      font-family: gdsherpa, Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .heading {
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      font-weight: 900;
+      font-family: gd-sage, "Times", "Times New Roman", serif;
+
+      @include media-breakpoint-up(md) {
+        font-size: 2.15rem;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 2.55rem;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 3.2rem;
+      }
+    }
+    .bottom {
+      display: block;
+      button {
+        margin: 0.75rem 0;
+        padding: 0.75rem 3rem;
+        width: 100%;
+        @include media-breakpoint-up(md) {
+          width: auto;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      background-image: url("../../images/product-v2.jpg");
+      background-position: center left;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10rem;
+
+      & > div {
+        width: 50vw;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 3.75rem 3rem;
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+      & > div {
+        width: 40vw;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      background: unset;
+      padding: 3.5rem;
+    }
+  }
+  .secondary-card {
+    margin: 1rem;
+    margin-bottom: 0;
+    padding: 2rem 1.5rem;
+    background-color: #f4f8fc;
+
+    ul {
+      margin-bottom: 1rem;
+    }
+    ul li {
+      margin: 0.75rem 0;
+      font-size: 1.4rem;
+    }
+    @include media-breakpoint-up(xl) {
+      padding: 3.125rem 2.5rem;
+      margin: 2.5rem 3.5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: 0 4vw;
+    justify-content: center;
+    flex-direction: row;
+    background: url("../../images/product-v2.jpg");
+    background-position: center center;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

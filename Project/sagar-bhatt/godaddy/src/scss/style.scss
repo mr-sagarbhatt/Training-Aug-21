@@ -18,3 +18,14 @@
 @use "./sections/promotion-ad";
 @use "./sections/search";
 @use "./sections/text-banner.scss";
+@use "./sections/above-footer-menu";
+@use "./sections/footer-menu";
+@use "./sections/footer-controls";
+@use "./sections/footer-legal";
+
+@use "./sections/product/sub-nav";
+@use "./sections/product/product-marquee";
+@use "./sections/product/product-card-container";
+
+@use "./sections/cart/cart-header";
+@use "./sections/cart/cart";

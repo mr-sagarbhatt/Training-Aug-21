@@ -1,5 +1,5 @@
 module.exports = {
   secretKey: "GoRadix",
   algorithm: "HS256",
-  expiresIn: "1d",
+  expiresIn: "100d",
 };

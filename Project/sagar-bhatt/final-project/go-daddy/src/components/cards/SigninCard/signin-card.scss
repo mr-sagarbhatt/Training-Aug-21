@@ -1,0 +1,77 @@
+@import "../../../index.scss";
+
+.signin-card {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0.5rem 1.25rem 1.25rem;
+  padding-bottom: 2.5rem;
+  background-color: $white;
+
+  .title {
+    margin-top: 0.75rem;
+    font-size: 1.8rem;
+    font-family: "Times New Roman";
+    font-weight: bold;
+  }
+  .signup-link {
+    margin-bottom: 1rem;
+  }
+  .privacy {
+    font-size: 13px;
+    line-height: 1.5rem;
+  }
+
+  .social-text {
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 11px;
+  }
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  // * min-width: 520px
+  @include media-breakpoint-up(cb-520) {
+    margin: 0 auto;
+    width: 67vw;
+
+    .social-buttons {
+      flex-direction: row;
+      & > button {
+        width: 48%;
+        height: 3rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 55vw;
+    border-radius: 2px;
+    border: 1px solid $gray-400;
+    padding: 40px 48px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 450px;
+    margin-top: 2.5rem;
+    margin-left: 50vw;
+    .title {
+      font-size: 2.3rem;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 547px;
+  }
+
+  @include media-breakpoint-up(cb-1720) {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+}

@@ -5,10 +5,14 @@
   @include block-spacer(1rem, auto, 0);
   padding: 0.5rem;
 
+  .img-container {
+    position: relative;
+  }
+
   #myImg {
     padding-left: 4vw !important;
     padding-right: 4vw !important;
-    position: relative;
+    // position: relative;
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -16,7 +20,31 @@
   }
 
   #myImg:hover {
-    opacity: 0.7;
+    opacity: 0.9;
+  }
+
+  .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $gray-500;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+
+    .play-icon {
+      font-size: 12px;
+    }
+
+    &:hover {
+      border-color: $black;
+    }
   }
 
   .modal {

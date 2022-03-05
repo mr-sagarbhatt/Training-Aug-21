@@ -1,0 +1,116 @@
+@import "../../../index.scss";
+
+.sign-up-form {
+  input {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-bottom: 1rem !important;
+
+    &:focus {
+      outline: 1.7px solid rgba($primary, 1);
+    }
+  }
+
+  .invalid-feedback {
+    display: block;
+    font-size: 14px;
+    margin-top: -1rem;
+    padding-bottom: 1rem;
+
+    &:first-child {
+      margin: auto;
+      text-align: center;
+    }
+  }
+
+  .password {
+    position: relative;
+  }
+
+  .passField {
+    &:focus ~ .password-card {
+      display: block;
+      position: absolute;
+      left: 0;
+      background: $white;
+      width: 100%;
+      margin-top: -0.9rem;
+      padding: 0.5rem;
+      border: 1px solid $black;
+      border-top: 0;
+
+      .password-msg {
+        position: relative;
+        padding: 0 0.5rem;
+        font-size: 15px;
+      }
+
+      .progress {
+        position: relative;
+        margin: 0.5rem;
+        height: 0.85rem;
+        border-radius: 4px;
+      }
+
+      .password-strength {
+        transition: all 300ms ease-in-out;
+        position: relative;
+        margin: 0.5rem;
+        font-weight: bolder;
+
+        &[data-password-score="null"] ~ .progress > .progress-bar {
+          width: 20%;
+          background: $danger !important;
+        }
+        &[data-password-score="0"] ~ .progress > .progress-bar {
+          width: 20%;
+          background: $danger !important;
+        }
+        &[data-password-score="1"] ~ .progress > .progress-bar {
+          width: 40%;
+          background: $warning !important;
+        }
+        &[data-password-score="2"] ~ .progress > .progress-bar {
+          width: 60%;
+          background: $warning !important;
+        }
+        &[data-password-score="3"] ~ .progress > .progress-bar {
+          width: 80%;
+          background: $dark-cyan !important;
+        }
+        &[data-password-score="4"] ~ .progress > .progress-bar {
+          width: 100%;
+          background: $dark-cyan !important;
+        }
+      }
+    }
+  }
+
+  .password-show {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $dark-cyan;
+  }
+
+  .password-card {
+    display: none;
+  }
+
+  .btn-submit {
+    font-weight: 500 !important;
+
+    button {
+      border-radius: 0;
+      display: inline-block;
+      margin-top: 1rem !important;
+      margin-bottom: 0.5rem !important;
+      background-color: $black;
+
+      &:hover {
+        background-color: rgba($black, 0.8);
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.legal-menu {
+  grid-area: lm;
+}
+.copyright {
+  grid-area: cp;
+}
+.tos {
+  grid-area: tos;
+}
+
+.footer-legal {
+  @include block-spacer(0, 0, 4vw);
+
+  display: grid;
+  grid-template-areas:
+    "lm lm lm lm"
+    "cp cp cp cp"
+    "tos tos tos tos";
+  gap: 1.25rem;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
+  font-size: 0.8rem;
+  text-align: center;
+  color: $white;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    gap: 1.25rem;
+  }
+  a {
+    color: $gray-500;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-areas: "cp lm" "tos .";
+    text-align: start;
+  }
+}

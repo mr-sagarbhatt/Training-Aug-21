@@ -1,0 +1,64 @@
+@import "../../../index.scss";
+
+.faq-section {
+  padding-top: 4vh;
+  // padding-bottom: 4vh;
+  @include block-spacer(8vh, 8vh, 8vw);
+
+  .heading {
+    font-size: clamp(2.027rem, calc(0.6366rem + 2.9004vw), 3.247rem);
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: gd-sage, "Times", "Times New Roman", serif;
+    text-align: center;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 430px;
+    }
+  }
+  .sub-heading {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem auto;
+  }
+
+  #accordionFaqs {
+    @include block-spacer(16vh, 8vh, 4vw);
+
+    @include media-breakpoint-up(md) {
+      width: 70vw;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 50vw;
+    }
+
+    #flush-headingOne {
+      border-top: 1px solid #d6d6d6;
+    }
+
+    .accordion-button {
+      font: 700 clamp(1.125rem, calc(0.3534rem + 1.6095vw), 1.802rem) / 1.2
+        $font-sans-serif;
+      letter-spacing: 0;
+      margin: 0.8rem auto;
+
+      @include media-breakpoint-up(md) {
+        margin: 2rem auto;
+      }
+    }
+
+    .accordion-body {
+      margin-bottom: 1rem;
+      a {
+        color: $light-cyan !important;
+        text-decoration: none;
+
+        &:hover {
+          color: $dark-cyan !important;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "../custom" as *;
+
+.logo {
+  grid-area: ll;
+}
+.hr {
+  grid-area: hr;
+}
+.social-media {
+  grid-area: sm;
+}
+
+.footer-controls {
+  display: grid;
+  grid-template-areas:
+    "ll ll ll"
+    "hr hr hr"
+    "sm sm sm";
+
+  .hr {
+    background-color: $gray-500;
+  }
+
+  .logo {
+    padding: 0 4vw;
+    width: 10.375rem;
+    height: 2.125rem;
+  }
+  .social-media {
+    padding: 0 4vw;
+    display: grid;
+    grid-template-areas: "sm sm sm";
+    justify-items: center;
+    i {
+      font-size: 2rem;
+      color: $white;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-areas:
+      "hr hr hr"
+      "ll sm sm";
+
+    .social-media {
+      justify-content: end;
+      gap: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-template-areas:
+      "ll sm sm"
+      "hr hr hr";
+  }
+}

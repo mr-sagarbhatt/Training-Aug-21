@@ -1,0 +1,93 @@
+@use "../custom" as *;
+
+.footer-menu {
+  padding: 4vh 4vw;
+  border-top: 1px solid $gray-700;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul li {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .menu {
+    .menu-item {
+      padding-bottom: 3vh;
+      color: $white;
+      font-weight: bold;
+    }
+
+    .heading.collapsed::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f067";
+      font-size: 0.7rem;
+      float: right;
+      vertical-align: middle;
+    }
+
+    .heading::after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f068";
+      font-size: 0.7rem;
+      float: right;
+      vertical-align: middle;
+    }
+
+    .submenu {
+      a {
+        color: #bac0c3;
+        font-size: 0.8rem;
+        font-weight: normal;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .footer-menu {
+    ul li {
+      min-width: 50%;
+      padding: 0 0.5%;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: wrap;
+
+      .heading {
+        display: block;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 700;
+      }
+
+      .heading.collapsed::after,
+      .heading::after {
+        display: none;
+        display: none;
+      }
+
+      .submenu {
+        display: list-item;
+      }
+
+      .submenu.collapsing {
+        transition: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .footer-menu {
+    ul li {
+      min-width: unset;
+    }
+  }
+}

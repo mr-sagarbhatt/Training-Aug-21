@@ -1,10 +1,9 @@
-const chalk = require("chalk");
+const { serverLogging } = require("../startup/logging");
 
-// * LOGGER MIDDLEWARE
+// *********** LOGGER MIDDLEWARE ***********
 const logger = (req, res, next) => {
-  console.log(
-    chalk.magenta(`Logged ${req.url} ${req.method} -- ${new Date()}`)
-  );
+  const msg = `Logged ${req.url} ${req.method}}`;
+  serverLogging.info(msg);
   next();
 };
 

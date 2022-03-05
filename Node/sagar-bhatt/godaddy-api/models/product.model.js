@@ -8,25 +8,30 @@ const productSchema = new Schema(
     _id: Number,
     name: {
       type: String,
-      required: true,
       alias: "productName",
+      maxlength: [
+        100,
+        `Product name must be less than or equal to 100 characters.`,
+      ],
+      unique: [true, `Product name is already exists.`],
+      required: [true, `Product name is required.`],
     },
     desc: {
       type: String,
       alias: "description",
+      maxlength: [
+        1024,
+        `Description must be less than or equal to 1024 characters.`,
+      ],
     },
     extras: {
-      type: Array,
+      type: [String],
     },
     price: {
       type: Number,
-      required: true,
       alias: "pricePerMonth",
-      min: 0,
-    },
-    discountId: {
-      type: Number,
-      ref: "discount",
+      min: [0, `Product price must be greater than or equal to 0.`],
+      required: [true, `Product price is required.`],
     },
     featured: {
       type: Boolean,
@@ -35,7 +40,7 @@ const productSchema = new Schema(
     subCategoryId: {
       type: Number,
       ref: "subCategory",
-      required: true,
+      required: [true, `SubCategory id is required.`],
     },
     isActive: {
       type: Boolean,
